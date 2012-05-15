@@ -1500,8 +1500,8 @@ function ActionButton(opts) {
 
   // grab from current scope if available
   this.template = template
-  
-  this.options = {target: '.right-buttons'}
+    
+  this.options = {target: '.right-buttons', className: 'action'}
   this.options = $.extend(this.options, opts)
 }
 
@@ -1513,14 +1513,58 @@ util.inherits(ActionButton, events.EventEmitter)
 
 
 /**
- * Render into HTML
+ * Returns HTML representation of the button
  */
 
 ActionButton.prototype.build = function() {
   return mustache.to_html(this.template, this.options)
 }
 
-})(vk, "<a href=\"{{href}}\">\n  <div id=\"{{id}}\" class=\"nav-button round action\">\n    <span class=\"{{sprite}} sprite\"></span>\n    {{#text}}<div>{{text}}</div>{{/text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\">\n  <div id=\"{{id}}\" class=\"nav-button round {{className}}\">\n    {{#sprite}}<span class=\"{{sprite}} sprite\"></span>{{/sprite}}\n    {{#text}}<span class=\"label\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
+;(function(exports, template){
+/**
+ * Expose `NavButton`.
+ */
+
+exports.NavButton = NavButton
+
+/**
+ * Create a new `NavButton`.
+ */
+
+exports.navButton = function(options) {
+  return new NavButton(options)
+}
+
+/**
+ * Initialize a new `NavButton`
+ */
+
+function NavButton(options) {
+  events.EventEmitter.call(this)
+
+  // grab from current scope if available
+  this.template = template
+    
+  this.options = options
+}
+
+/**
+ * Inherit from EventEmitter
+ */
+
+util.inherits(NavButton, events.EventEmitter)
+
+
+/**
+ * Returns HTML representation of the button
+ */
+
+NavButton.prototype.build = function() {
+  return mustache.to_html(this.template, this.options)
+}
+
+})(vk, "<a href=\"{{href}}\"><div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">{{text}}</div></a>\n");
 ;(function(exports, template){
 /**
  * Expose `TopNav`.
@@ -1579,3 +1623,92 @@ TopNav.prototype.add = function(button) {
 }
 
 })(vk, "<div class=\"topNav\">\n  <div class=\"left-buttons\"></div>\n  <div class=\"right-buttons\"></div>\n</div>");
+;(function(exports){
+/**
+ * Expose `BottomNav`.
+ */
+
+exports.BottomNav = BottomNav
+
+/**
+ * Create a new `BottomNav`.
+ */
+
+exports.bottomNav = function(target) {
+  return new BottomNav(target)
+}
+
+/**
+ * Initialize a new `BottomNav`
+ */
+
+function BottomNav(target) {
+  events.EventEmitter.call(this)
+
+  this.target = target
+  this.items = []
+}
+
+/**
+ * Inherit from EventEmitter
+ */
+
+util.inherits(BottomNav, events.EventEmitter)
+
+
+/**
+ * Render into HTML
+ */
+
+BottomNav.prototype.render = function() {
+  var target = $(this.target)
+  target.addClass('bottomNav')
+  this.items.forEach(function(item) {
+    target.append(item.build())
+  })
+}
+
+/**
+ * Add a menu item
+ */
+
+BottomNav.prototype.add = function(button) {
+  this.items.push(button)
+  this.render()
+}
+
+})(vk);
+;(function(exports, template){
+/**
+ * Expose `ScrollArea`.
+ */
+
+exports.ScrollArea = ScrollArea
+
+/**
+ * Create a new `ScrollArea`.
+ */
+
+exports.scrollArea = function(target) {
+  return new ScrollArea(target)
+}
+
+/**
+ * Initialize a new `ScrollArea`
+ */
+
+function ScrollArea(target) {
+  events.EventEmitter.call(this)
+
+  // grab from current scope if available
+  this.el = $(template)
+  
+  $(target).html(this.el)
+}
+
+/**
+ * Inherit from EventEmitter
+ */
+
+util.inherits(ScrollArea, events.EventEmitter)
+})(vk, "<div class=\"ui-content\"></div>");

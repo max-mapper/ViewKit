@@ -1,5 +1,8 @@
 COMPONENTS = actionbutton \
-	topnav
+	navbutton \
+	topnav \
+	bottomnav \
+	scrollarea
   
 all:
 	@rm -fr build
@@ -7,6 +10,3 @@ all:
 	@cat lib/browserify/bundle.js > build/vk.js
 	@cat lib/components/prelude.js >> build/vk.js
 	@./support/build.js $(COMPONENTS)
-
-watch:
-	watch --interval=1 $(MAKE)

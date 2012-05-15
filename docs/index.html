@@ -10,14 +10,24 @@
     <link rel="stylesheet" href="style.css">
     <script>
       $(function(){
-        var nav = vk.topNav('.navContainer')
-        var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save", sprite: "icon-hexagonplus"})
-        
+        var nav = vk.topNav('.nav')
+        var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
         nav.add(button)
+        
+        var button2 = vk.actionButton({target: '.left-buttons', href: "#/submit!", id: "home", text: "Home"})
+        nav.add(button2)
+        
+        var body = vk.scrollArea('.body')
+        
+        var footer = vk.bottomNav('.footer')
+        var button3 = vk.navButton({href: "#/list!", id: "list", text: "List"})
+        footer.add(button3)
       })
     </script>
   </head>
   <body>
-    <div class="navContainer"></div>
+    <div class="nav"></div>
+    <div class="body"></div>
+    <div class="footer"></div>
   </body>
 </html>
