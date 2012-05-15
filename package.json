@@ -1,7 +1,9 @@
 {
-  "author": "Max Ogden"
+  "author": "Max Ogden",
   "name": "viewkit",
   "description": "mobile browser ui library",
   "version": "0.0.1",
-  "dependencies": {}
+  "dependencies": {
+    "dominode.js": "0.0.4"
+  }
 }

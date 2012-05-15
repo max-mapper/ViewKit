@@ -1,4 +1,5 @@
-COMPONENTS = nav
+COMPONENTS = actionbutton \
+	topnav
   
 all:
 	@rm -fr build

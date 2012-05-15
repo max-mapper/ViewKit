@@ -3,16 +3,21 @@
   <head>
     <title>ViewKit - UIKit designed for mobile WebKit WebViews</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="jquery.js"></script>
+    <script src="zepto.min.js"></script>
     <script src="../build/vk.js"></script>
     <script src="highlight.js"></script>
     <link rel="stylesheet" href="../build/vk.css">
     <link rel="stylesheet" href="style.css">
     <script>
-      $(function(){ })
+      $(function(){
+        var nav = vk.topNav('.navContainer')
+        var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save", sprite: "icon-hexagonplus"})
+        
+        nav.add(button)
+      })
     </script>
   </head>
   <body>
-
+    <div class="navContainer"></div>
   </body>
 </html>
