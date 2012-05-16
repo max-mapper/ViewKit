@@ -1,7 +1,8 @@
-COMPONENTS = actionbutton \
-	navbutton \
+COMPONENTS = navbar \
 	topnav \
 	bottomnav \
+	actionbutton \
+	navbutton \
 	scrollarea
   
 all:

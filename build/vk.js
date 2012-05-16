@@ -1476,6 +1476,143 @@ var mustache = require('mustache')
 var dominode = require('dominode.js')
 var vk = {};
 
+;(function(exports){
+/**
+ * Expose `NavBar`.
+ */
+
+exports.NavBar = NavBar
+
+/**
+ * Create a new `NavBar`.
+ */
+
+exports.navBar = function(target) {
+  return new NavBar(target)
+}
+
+/**
+ * Initialize a new `NavBar`
+ */
+
+function NavBar(target) {
+  events.EventEmitter.call(this)
+
+  this.target = target
+  this.items = []
+}
+
+/**
+ * Inherit from EventEmitter
+ */
+
+util.inherits(NavBar, events.EventEmitter)
+
+
+/**
+ * Render into HTML
+ */
+
+NavBar.prototype.render = function() {
+  var target = $(this.target)
+  this.items.forEach(function(item) {
+    target.append(item.build())
+  })
+}
+
+/**
+ * Add an item to this nav bar
+ */
+
+NavBar.prototype.add = function(item) {
+  this.items.push(item)
+  this.render()
+}
+
+})(vk);
+;(function(exports, template){
+/**
+ * Expose `TopNav`.
+ */
+
+exports.TopNav = TopNav
+
+/**
+ * Create a new `TopNav`.
+ */
+
+exports.topNav = function(target) {
+  return new TopNav(target)
+}
+
+/**
+ * Initialize a new `TopNav`
+ */
+
+function TopNav(target) {
+  this.template = template
+  vk.NavBar.apply(this, arguments)
+}
+
+/**
+ * Inherit from NavBar
+ */
+
+util.inherits(TopNav, vk.NavBar)
+
+
+/**
+ * Render into HTML
+ */
+
+TopNav.prototype.render = function() {
+  var target = $(this.target)
+  target.html(mustache.to_html(this.template))
+  this.items.forEach(function(item) {
+    target.find(item.options.target).append(item.build())
+  })
+}
+
+/**
+ * Add a menu item
+ */
+
+TopNav.prototype.add = function(button) {
+  this.items.push(button)
+  this.render()
+}
+
+})(vk, "<div class=\"topNav\">\n  <div class=\"left-buttons\"></div>\n  <div class=\"right-buttons\"></div>\n</div>");
+;(function(exports){
+/**
+ * Expose `BottomNav`.
+ */
+
+exports.BottomNav = BottomNav
+
+/**
+ * Create a new `BottomNav`.
+ */
+
+exports.bottomNav = function(target) {
+  return new BottomNav(target)
+}
+
+/**
+ * Initialize a new `BottomNav`
+ */
+
+function BottomNav(target) {
+  vk.NavBar.apply(this, arguments)
+  $(this.target).addClass('bottomNav')
+}
+
+/**
+ * Inherit from NavBar
+ */
+
+util.inherits(BottomNav, vk.NavBar)
+})(vk);
 ;(function(exports, template){
 /**
  * Expose `ActionButton`.
@@ -1565,119 +1702,6 @@ NavButton.prototype.build = function() {
 }
 
 })(vk, "<a href=\"{{href}}\"><div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">{{text}}</div></a>\n");
-;(function(exports, template){
-/**
- * Expose `TopNav`.
- */
-
-exports.TopNav = TopNav
-
-/**
- * Create a new `TopNav`.
- */
-
-exports.topNav = function(target) {
-  return new TopNav(target)
-}
-
-/**
- * Initialize a new `TopNav`
- */
-
-function TopNav(target) {
-  events.EventEmitter.call(this)
-
-  // grab from current scope if available
-  this.template = template
-
-  this.target = target
-  this.items = []
-}
-
-/**
- * Inherit from EventEmitter
- */
-
-util.inherits(TopNav, events.EventEmitter)
-
-
-/**
- * Render into HTML
- */
-
-TopNav.prototype.render = function() {
-  var target = $(this.target)
-  target.html(mustache.to_html(this.template))
-  this.items.forEach(function(item) {
-    target.find(item.options.target).append(item.build())
-  })
-}
-
-/**
- * Add a menu item
- */
-
-TopNav.prototype.add = function(button) {
-  this.items.push(button)
-  this.render()
-}
-
-})(vk, "<div class=\"topNav\">\n  <div class=\"left-buttons\"></div>\n  <div class=\"right-buttons\"></div>\n</div>");
-;(function(exports){
-/**
- * Expose `BottomNav`.
- */
-
-exports.BottomNav = BottomNav
-
-/**
- * Create a new `BottomNav`.
- */
-
-exports.bottomNav = function(target) {
-  return new BottomNav(target)
-}
-
-/**
- * Initialize a new `BottomNav`
- */
-
-function BottomNav(target) {
-  events.EventEmitter.call(this)
-
-  this.target = target
-  this.items = []
-}
-
-/**
- * Inherit from EventEmitter
- */
-
-util.inherits(BottomNav, events.EventEmitter)
-
-
-/**
- * Render into HTML
- */
-
-BottomNav.prototype.render = function() {
-  var target = $(this.target)
-  target.addClass('bottomNav')
-  this.items.forEach(function(item) {
-    target.append(item.build())
-  })
-}
-
-/**
- * Add a menu item
- */
-
-BottomNav.prototype.add = function(button) {
-  this.items.push(button)
-  this.render()
-}
-
-})(vk);
 ;(function(exports, template){
 /**
  * Expose `ScrollArea`.
