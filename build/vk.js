@@ -1560,17 +1560,13 @@ function TopNav(target) {
 
 util.inherits(TopNav, vk.NavBar)
 
-
 /**
  * Render into HTML
  */
 
 TopNav.prototype.render = function() {
-  var target = $(this.target)
-  target.html(mustache.to_html(this.template))
-  this.items.forEach(function(item) {
-    target.find(item.options.target).append(item.build())
-  })
+  $(this.target).html(mustache.to_html(this.template))
+  TopNav.super_.prototype.render.call(this)
 }
 
 /**
