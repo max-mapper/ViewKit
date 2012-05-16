@@ -1565,8 +1565,11 @@ util.inherits(TopNav, vk.NavBar)
  */
 
 TopNav.prototype.render = function() {
-  $(this.target).html(mustache.to_html(this.template))
-  TopNav.super_.prototype.render.call(this)
+  var target = $(this.target)
+  target.html(mustache.to_html(this.template))
+  this.items.forEach(function(item) {
+    $(item.options.target).append(item.build())
+  })
 }
 
 /**
@@ -1609,6 +1612,48 @@ function BottomNav(target) {
 
 util.inherits(BottomNav, vk.NavBar)
 })(vk);
+;(function(exports){
+/**
+ * Expose `Button`
+ */
+
+exports.Button = Button
+
+/**
+ * Create a new `Button`
+ */
+
+exports.button = function(options) {
+  return new Button(options)
+}
+
+/**
+ * Initialize a new `Button`
+ */
+
+function Button(options) {
+  events.EventEmitter.call(this)
+  this.options = $.extend({}, this.options, options)
+  // grab from current scope if available
+  if (typeof template !== "undefined") this.template = template
+}
+
+/**
+ * Inherit from EventEmitter
+ */
+
+util.inherits(Button, events.EventEmitter)
+
+
+/**
+ * Returns HTML representation of the button
+ */
+
+Button.prototype.build = function() {
+  return mustache.to_html(this.template, this.options)
+}
+
+})(vk);
 ;(function(exports, template){
 /**
  * Expose `ActionButton`.
@@ -1620,39 +1665,26 @@ exports.ActionButton = ActionButton
  * Create a new `ActionButton`.
  */
 
-exports.actionButton = function(opts) {
-  return new ActionButton(opts)
+exports.actionButton = function(options) {
+  return new ActionButton(options)
 }
 
 /**
  * Initialize a new `ActionButton`
  */
 
-function ActionButton(opts) {
-  events.EventEmitter.call(this)
-
-  // grab from current scope if available
-  this.template = template
-    
+function ActionButton(options) {
   this.options = {target: '.right-buttons', className: 'action'}
-  this.options = $.extend(this.options, opts)
+  vk.Button.apply(this, arguments)
+  // grab from current scope if available
+  if (typeof template !== "undefined") this.template = template
 }
 
 /**
- * Inherit from EventEmitter
+ * Inherit from Button
  */
 
-util.inherits(ActionButton, events.EventEmitter)
-
-
-/**
- * Returns HTML representation of the button
- */
-
-ActionButton.prototype.build = function() {
-  return mustache.to_html(this.template, this.options)
-}
-
+util.inherits(ActionButton, vk.Button)
 })(vk, "<a href=\"{{href}}\">\n  <div id=\"{{id}}\" class=\"nav-button round {{className}}\">\n    {{#sprite}}<span class=\"{{sprite}} sprite\"></span>{{/sprite}}\n    {{#text}}<span class=\"label\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
@@ -1674,29 +1706,17 @@ exports.navButton = function(options) {
  */
 
 function NavButton(options) {
-  events.EventEmitter.call(this)
+  vk.Button.apply(this, arguments)
 
   // grab from current scope if available
   this.template = template
-    
-  this.options = options
 }
 
 /**
  * Inherit from EventEmitter
  */
 
-util.inherits(NavButton, events.EventEmitter)
-
-
-/**
- * Returns HTML representation of the button
- */
-
-NavButton.prototype.build = function() {
-  return mustache.to_html(this.template, this.options)
-}
-
+util.inherits(NavButton, vk.Button)
 })(vk, "<a href=\"{{href}}\"><div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">{{text}}</div></a>\n");
 ;(function(exports, template){
 /**

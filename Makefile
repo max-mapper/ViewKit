@@ -1,6 +1,7 @@
 COMPONENTS = navbar \
 	topnav \
 	bottomnav \
+	button \
 	actionbutton \
 	navbutton \
 	scrollarea
