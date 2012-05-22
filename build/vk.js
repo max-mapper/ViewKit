@@ -1508,16 +1508,26 @@ function NavBar(target) {
 
 util.inherits(NavBar, events.EventEmitter)
 
-
 /**
- * Render into HTML
+ * Injects into DOM
  */
 
 NavBar.prototype.render = function() {
   var target = $(this.target)
+  target.html('')
+  target.append(this.build())
+}
+
+/**
+ * returns new jQuery collection
+ */
+
+NavBar.prototype.build = function() {
+  var output = []
   this.items.forEach(function(item) {
-    target.append(item.build())
+    output.push($(item.build())[0])
   })
+  return output
 }
 
 /**
