@@ -1,0 +1,15 @@
+.vk-container * {
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-touch-callout: none; 
+  
+  /* prevent webkit from resizing text to fit */
+  -webkit-text-size-adjust: none; 
+  
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+}
+
+.vk-container input[type="checkbox"] { -webkit-appearance:none; }
+
+.vk-container input::-webkit-input-placeholder { opacity: .8; }

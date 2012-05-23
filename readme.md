@@ -4,6 +4,6 @@ ViewKit is a fork of UIKit designed for mobile WebKit WebViews. Initially design
 
 Relies on browserified node libraries such as EventEmitter
 
-generate `lib/browserify/bundle.js` with `browserify -r util -r events -r stream -r mustache -r dominode -o lib/browserify/bundle.js`
+generate `lib/browserify/bundle.js` with `browserify -r util -r events -r stream -r mustache -r dominode.js -r masseuse -o lib/browserify/bundle.js`
 
 compile `build/` with `make`
