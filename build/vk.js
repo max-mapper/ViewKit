@@ -1506,7 +1506,6 @@ function listenForTouches(scope) {
 function turnOffClick(elems) {
   elems.forEach(function(el) {
     $(el).live('click', function(e) {
-      console.log('preventing click')
       e.preventDefault()
       return false
     })

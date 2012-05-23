@@ -13,3 +13,5 @@
 .vk-container input[type="checkbox"] { -webkit-appearance:none; }
 
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
+
+.vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
