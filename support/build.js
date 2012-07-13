@@ -47,12 +47,13 @@ process.on('exit', function(){
 function build(name, fn) {
   // javascript
   var js = path.join(lib, name, name + '.js');
-  read(js, function(js){
+  read(js, function(err, js) {
+    if (err) return fn()
 
     // with template
     var template = path.join(lib, name, name + '.html');
     if (fs.existsSync(template)) {
-      read(template, function(template){
+      read(template, function(err, template){
         js = '\n;(function(exports, template){\n'
           + js
           + '\n})(' + namespace + ', ' + JSON.stringify(template) + ');';
@@ -76,7 +77,7 @@ function build(name, fn) {
   // style
   var css = path.join(lib, name, name + '.css');
   if (fs.existsSync(css)) {
-    read(css, function(css){
+    read(css, function(err, css){
       append(cssOutput, css);
     });
   }
@@ -98,7 +99,7 @@ function append(file, str, fn) {
 
 function read(file, fn) {
   fs.readFile(file, 'utf8', function(err, str){
-    if (err) throw err;
-    fn(str);
+    if (err) return fn(err);
+    fn(false, str);
   });
 }

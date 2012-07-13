@@ -1538,7 +1538,7 @@ function Container(options) {
 
 util.inherits(Container, events.EventEmitter)
 })(vk);
-;(function(exports){
+;(function(exports, template){
 /**
  * Expose `NavBar`.
  */
@@ -1549,19 +1549,29 @@ exports.NavBar = NavBar
  * Create a new `NavBar`.
  */
 
-exports.navBar = function(target) {
-  return new NavBar(target)
+exports.navBar = function(target, className) {
+  return new NavBar(target, className)
 }
 
 /**
  * Initialize a new `NavBar`
  */
 
-function NavBar(target) {
+function NavBar(target, className) {
+  // grab from global scope
+  this.template = template
+  $(target).html(template)
   events.EventEmitter.call(this)
-
+  if (className) {
+    this.className = className
+    $(target).addClass(className)
+  }
   this.target = target
-  this.items = []
+  this.items = {
+    left: [],
+    center: [],
+    right: []
+  }
 }
 
 /**
@@ -1575,115 +1585,36 @@ util.inherits(NavBar, events.EventEmitter)
  */
 
 NavBar.prototype.render = function() {
+  var self = this
   var target = $(this.target)
-  target.html('')
-  target.append(this.build())
+  target.html(this.template)
+  Object.keys(this.items).forEach(function(side) {
+    var container = target.find('.' + side)
+    container.append(self.build(side))    
+  })
+  
 }
 
 /**
  * returns new jQuery collection
  */
 
-NavBar.prototype.build = function() {
-  var output = []
-  this.items.forEach(function(item) {
-    output.push($(item.build())[0])
+NavBar.prototype.build = function(side) {
+  return this.items[side || 'center'].map(function(item) {
+    return $(item.build())[0]
   })
-  return output
 }
 
 /**
  * Add an item to this nav bar
  */
 
-NavBar.prototype.add = function(item) {
-  this.items.push(item)
+NavBar.prototype.add = function(item, side) {
+  this.items[side || 'center'].push(item)
   this.render()
 }
 
-})(vk);
-;(function(exports, template){
-/**
- * Expose `TopNav`.
- */
-
-exports.TopNav = TopNav
-
-/**
- * Create a new `TopNav`.
- */
-
-exports.topNav = function(target) {
-  return new TopNav(target)
-}
-
-/**
- * Initialize a new `TopNav`
- */
-
-function TopNav(target) {
-  this.template = template
-  vk.NavBar.apply(this, arguments)
-}
-
-/**
- * Inherit from NavBar
- */
-
-util.inherits(TopNav, vk.NavBar)
-
-/**
- * Render into HTML
- */
-
-TopNav.prototype.render = function() {
-  var target = $(this.target)
-  target.html(mustache.to_html(this.template))
-  this.items.forEach(function(item) {
-    $(item.options.target).append(item.build())
-  })
-}
-
-/**
- * Add a menu item
- */
-
-TopNav.prototype.add = function(button) {
-  this.items.push(button)
-  this.render()
-}
-
-})(vk, "<div class=\"topNav\">\n  <div class=\"left-buttons\"></div>\n  <div class=\"right-buttons\"></div>\n</div>");
-;(function(exports){
-/**
- * Expose `BottomNav`.
- */
-
-exports.BottomNav = BottomNav
-
-/**
- * Create a new `BottomNav`.
- */
-
-exports.bottomNav = function(target) {
-  return new BottomNav(target)
-}
-
-/**
- * Initialize a new `BottomNav`
- */
-
-function BottomNav(target) {
-  vk.NavBar.apply(this, arguments)
-  $(this.target).addClass('bottomNav')
-}
-
-/**
- * Inherit from NavBar
- */
-
-util.inherits(BottomNav, vk.NavBar)
-})(vk);
+})(vk, "<div class=\"{{className}}\">\n  <div class=\"left buttons\"></div>\n  <div class=\"center buttons\"></div>\n  <div class=\"right buttons\"></div>\n</div>");
 ;(function(exports){
 /**
  * Expose `Button`
@@ -1746,7 +1677,7 @@ exports.actionButton = function(options) {
  */
 
 function ActionButton(options) {
-  this.options = {target: '.right-buttons', className: 'action'}
+  this.options = {target: '.right.buttons', className: 'action'}
   vk.Button.apply(this, arguments)
   // grab from current scope if available
   if (typeof template !== "undefined") this.template = template

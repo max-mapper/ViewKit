@@ -17,7 +17,9 @@
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
 .topNav { z-index: 666; width: 100%; height: 49px; border-bottom: 1px solid #6d8f75; position: fixed; top: 0px; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;}
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); display: -webkit-box; display: -moz-box; display: box; }
+.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); }
+.bottomNav .center.buttons { display: -webkit-box; display: -moz-box; display: box; }
+.bottomNav .right.buttons { height: 53px; float: right; }
 .bottomNav .selected { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
 .bottomNav .refreshIcon { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; }
 .bottomNav .refreshIcon:active { background-color: #C7DECC; }
@@ -46,9 +48,9 @@
 
 /*.nav-button.action span { display: inline-block; position: relative; top: 6px; }
 */
-.left-buttons a { float: left; }
-.right-buttons a { float: right; }
-.right-buttons a:active div { }
+.left.buttons a { float: left; }
+.right.buttons a { float: right; }
+.right.buttons a:active div { }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .bottomNav a { display: block; line-height: 36px; text-align: center; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1;}
 .bottomNav a.refreshButton { width: 38px; height: 38px; display: block; margin: 8px 0px 7px 4px; }

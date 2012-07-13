@@ -18,21 +18,20 @@
     <div class="footer"></div>
     <script type="text/javascript">
       var container = vk.container()
-      var nav = vk.topNav('.nav')
+      var nav = vk.navBar('.nav', 'topNav')
       var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
       nav.add(button)
       
-      var button2 = vk.actionButton({target: '.left-buttons', href: "#/submit!", id: "home", text: "Home"})
+      var button2 = vk.actionButton({target: '.left.buttons', href: "#/submit!", id: "home", text: "Home"})
       nav.add(button2)
       
       var body = vk.scrollArea('.body')
       
-      var footer = vk.bottomNav('.footer')
+      var footer = vk.navBar('.footer', 'bottomNav')
       var button3 = vk.navButton({href: "#/list", id: "list", text: "List"})
       footer.add(button3)
       var button4 = vk.navButton({href: "#/map", id: "map", text: "Map"})
       footer.add(button4)
-      
     </script>
   </body>
 </html>

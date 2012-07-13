@@ -18,7 +18,7 @@
 
 /*.nav-button.action span { display: inline-block; position: relative; top: 6px; }
 */
-.left-buttons a { float: left; }
-.right-buttons a { float: right; }
-.right-buttons a:active div { }
+.left.buttons a { float: left; }
+.right.buttons a { float: right; }
+.right.buttons a:active div { }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
