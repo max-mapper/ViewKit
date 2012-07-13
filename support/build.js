@@ -51,7 +51,7 @@ function build(name, fn) {
 
     // with template
     var template = path.join(lib, name, name + '.html');
-    if (path.existsSync(template)) {
+    if (fs.existsSync(template)) {
       read(template, function(template){
         js = '\n;(function(exports, template){\n'
           + js
@@ -75,7 +75,7 @@ function build(name, fn) {
 
   // style
   var css = path.join(lib, name, name + '.css');
-  if (path.existsSync(css)) {
+  if (fs.existsSync(css)) {
     read(css, function(css){
       append(cssOutput, css);
     });

@@ -17,7 +17,7 @@
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
 .topNav { z-index: 666; width: 100%; height: 49px; border-bottom: 1px solid #6d8f75; position: fixed; top: 0px; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;}
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646));}
+.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); display: -webkit-box; display: -moz-box; display: box; }
 .bottomNav .selected { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
 .bottomNav .refreshIcon { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; }
 .bottomNav .refreshIcon:active { background-color: #C7DECC; }
@@ -50,9 +50,9 @@
 .right-buttons a { float: right; }
 .right-buttons a:active div { }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav a { display: inline-block; line-height: 36px; width: 28%; margin: 0 auto; float: left; text-align: center;}
+.bottomNav a { display: block; line-height: 36px; text-align: center; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1;}
 .bottomNav a.refreshButton { width: 38px; height: 38px; display: block; margin: 8px 0px 7px 4px; }
-.bottomButton { border-radius: 3px; margin: 8px 0px 7px 4px; height: 38px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomButton { border-radius: 3px; padding: 8px 0px 7px 4px; height: 38px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
 .ui-content { z-index:2 !important; overflow: scroll; -webkit-overflow-scrolling: touch; background: white; font-family: Open Sans; position: fixed; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc;}
 .ui-content .event-details { overflow: auto; background-color: #e6e6e6; height: 100%; }

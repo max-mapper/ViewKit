@@ -1,4 +1,4 @@
-.bottomNav a { display: inline-block; line-height: 36px; width: 28%; margin: 0 auto; float: left; text-align: center;}
+.bottomNav a { display: block; line-height: 36px; text-align: center; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1;}
 .bottomNav a.refreshButton { width: 38px; height: 38px; display: block; margin: 8px 0px 7px 4px; }
-.bottomButton { border-radius: 3px; margin: 8px 0px 7px 4px; height: 38px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomButton { border-radius: 3px; padding: 8px 0px 7px 4px; height: 38px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
