@@ -5,7 +5,9 @@ COMPONENTS = container \
 	button \
 	actionbutton \
 	navbutton \
-	scrollarea
+	scrollarea \
+	list \
+	item
   
 all:
 	@rm -fr build

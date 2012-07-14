@@ -1743,7 +1743,7 @@ exports.scrollArea = function(target) {
 function ScrollArea(target) {
   events.EventEmitter.call(this)
 
-  // grab from current scope if available
+  // grab template from current scope
   this.el = $(template)
   
   $(target).html(this.el)
@@ -1754,4 +1754,77 @@ function ScrollArea(target) {
  */
 
 util.inherits(ScrollArea, events.EventEmitter)
+
 })(vk, "<div class=\"ui-content\"></div>");
+;(function(exports, template){
+/**
+ * Expose `List`.
+ */
+
+exports.List = List
+
+/**
+ * Create a new `List`.
+ */
+
+exports.list = function(target) {
+  return new List(target)
+}
+
+/**
+ * Initialize a new `List`
+ */
+
+function List(target) {
+  vk.ScrollArea.call(this, target)
+  this.template = template
+  this.items = []
+}
+
+/**
+ * Inherit from ScrollArea
+ */
+
+util.inherits(List, vk.ScrollArea)
+
+List.prototype.add = function(item) {
+  this.items.push(item)
+  this.render()
+}
+
+List.prototype.render = function() {
+  var rendered = mustache.to_html(
+    this.template,
+    {items: this.items.map(function(item){ return item.data })},
+    {itemTemplate: this.items[0].template}
+  )
+  this.el.html(rendered)
+}
+
+})(vk, "<div class=\"items\">\n  {{#items}}\n    {{> itemTemplate}}\n  {{/items}}\n</div>\n");
+;(function(exports, template){
+/**
+ * Expose `Item`.
+ */
+
+exports.Item = Item
+
+/**
+ * Create a new `Item`.
+ */
+
+exports.item = function(data) {
+  return new Item(data)
+}
+
+/**
+ * Initialize a new `Item`
+ */
+
+function Item(data) {
+  this.data = data
+  // grab from current scope if available
+  this.template = template
+}
+
+})(vk, "<a href=\"#/details/{{_id}}\" data-id=\"{{_id}}\" data-rev=\"{{_rev}}\">\n  <div class=\"row\" data-lat=\"{{lat}}\" data-lon=\"{{lon}}\">\n    <div class=\"name\">{{title}}</div>\n  </div>\n</a>");
