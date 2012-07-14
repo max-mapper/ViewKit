@@ -48,7 +48,11 @@ function build(name, fn) {
   // javascript
   var js = path.join(lib, name, name + '.js');
   read(js, function(err, js) {
-    if (err) return fn()
+    function done() {
+      console.log('  \033[90mbuild \033[36m%s\033[m', name);
+      fn()
+    }
+    if (err) return done()
 
     // with template
     var template = path.join(lib, name, name + '.html');
@@ -57,20 +61,14 @@ function build(name, fn) {
         js = '\n;(function(exports, template){\n'
           + js
           + '\n})(' + namespace + ', ' + JSON.stringify(template) + ');';
-        append(jsOutput, js, function(){
-          console.log('  \033[90mbuild \033[36m%s\033[m', name);
-          fn();
-        });
+        append(jsOutput, js, done);
       });
     // without template
     } else {
       js = '\n;(function(exports){\n'
         + js
         + '\n})(' + namespace + ');';
-      append(jsOutput, js, function(){
-        console.log('  \033[90mbuild \033[36m%s\033[m', name);
-        fn();
-      });
+      append(jsOutput, js, done);
     }
   });
 
