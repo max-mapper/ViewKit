@@ -1,1 +1,1 @@
-.ui-content { z-index:2 !important; overflow: scroll; -webkit-overflow-scrolling: touch; background: white; font-family: Open Sans; position: fixed; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc;}
+.ui-content { z-index:2 !important; position: absolute; background: white; font-family: Open Sans; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc; }

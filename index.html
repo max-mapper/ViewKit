@@ -28,14 +28,11 @@
       var button2 = vk.actionButton({target: '.left.buttons', href: "#/submit!", id: "home", text: "Home"})
       nav.add(button2)
       
-      var list = vk.list('.body')
-      var item = vk.item({'title': 'hello'})
-      list.add(item)
-      var item = vk.item({'title': 'world'})
-      list.add(item)
-      var item = vk.item({'title': '!'})
-      list.add(item)
-      
+      var list = vk.list('.body')      
+      "hello this is a test of many many many many many many many many many many many many rows of data".split(' ').forEach(function(word) {
+        list.add(vk.item({'title': word}))
+      })
+
       var footer = vk.navBar('.footer', 'bottomNav')
       
       var listButton = vk.navButton({href: "#/list", id: "list", text: "List"})

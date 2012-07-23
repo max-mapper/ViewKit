@@ -56,11 +56,11 @@
 .bottomNav a.refreshButton { width: 38px; height: 38px; display: block; margin: 8px 0px 7px 4px; }
 .bottomButton { border-radius: 3px; padding: 8px 0px 7px 4px; height: 38px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
-.ui-content { z-index:2 !important; overflow: scroll; -webkit-overflow-scrolling: touch; background: white; font-family: Open Sans; position: fixed; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc;}
+.ui-content { z-index:2 !important; position: absolute; background: white; font-family: Open Sans; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc; }
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
-.ui-content .items { min-height: 376px; }
+.ui-content .items { height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
 .ui-content .itemDetails { margin-left: 60px; }
-.ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; overflow: auto; color: #363636; position: relative; }
+.ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }
 .ui-content .items a:nth-child(odd) .row { background-color: #fafafa;}
 .ui-content .items .user { font-size: 11.32px; margin: 3px 0 0 0px; font-family: "Open Sans Bold"; color: #ff8657; }
