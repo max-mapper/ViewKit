@@ -29,8 +29,8 @@
   -o-box-align: center;
   box-align: center; 
 }
-.left.buttons { padding-left: 5px; }
-.right.buttons { padding-right: 5px; }
+.left.buttons .actionButton { margin-left: 5px; }
+.right.buttons .actionButton { margin-right: 5px; }
 .left.buttons a { float: left; }
 .right.buttons a { float: right; }
 .right.buttons a:active div { }

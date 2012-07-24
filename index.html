@@ -25,9 +25,11 @@
       var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
       nav.add(button, "right")
       
-      var button2 = vk.actionButton({href: "#/submit!", id: "list-icon", text: "", className: "sprite-list-on"})
+      var button2 = vk.actionButton({href: "#/list", id: "list-icon", text: "", className: "sprite-list-off"})
       nav.add(button2, "left")
-      
+      var button3 = vk.actionButton({href: "#/map", id: "map-icon", text: "", className: "sprite-map-off"})
+      nav.add(button3, "left")
+
       var list = vk.list('.body')      
       "hello this is a test of many many many many many many many many many many many many rows of data".split(' ').forEach(function(word) {
         list.add(vk.item({'title': word}))
