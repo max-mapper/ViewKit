@@ -1,1 +1,14 @@
-.topNav { z-index: 666; width: 100%; height: 49px; border-bottom: 1px solid #6d8f75; position: fixed; top: 0px; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;}
+.topNav { z-index: 666; width: 100%; height: 49px; border-bottom: 1px solid #6d8f75; position: fixed; top: 0px; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: box;
+}
+
+
+
+

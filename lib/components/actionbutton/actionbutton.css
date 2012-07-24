@@ -1,5 +1,6 @@
+.actionButton {display: box; box-flex: 1;}
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
-.nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; margin: 5px; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
+.nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
 .nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
 .nav-button.round .label { margin: 0 10px; }
 .nav-button.srsbsns { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe8657), to(#e9794f)); color: white; text-shadow: none; font-family: 'Open Sans Bold'; margin: 0; width: 100%; }
@@ -18,6 +19,18 @@
 
 /*.nav-button.action span { display: inline-block; position: relative; top: 6px; }
 */
+.buttons { 
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  box-align: center; 
+}
+.left.buttons { padding-left: 5px; }
+.right.buttons { padding-right: 5px; }
 .left.buttons a { float: left; }
 .right.buttons a { float: right; }
 .right.buttons a:active div { }

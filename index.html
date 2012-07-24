@@ -23,15 +23,9 @@
       var nav = vk.navBar('.nav', 'topNav')
       
       var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
-      nav.add(button)
+      nav.add(button, "right")
       
-      // <a href="#/list!" class="hasActive">
-      //   <div id="list-icon" class="nav-icon">
-      //     <div data-view="list" class="list on sprite"></div>
-      //   </div>
-      // </a>
-      
-      var button2 = vk.actionButton({href: "#/submit!", id: "list-icon", text: "", className: "list on sprite"})
+      var button2 = vk.actionButton({href: "#/submit!", id: "list-icon", text: "", className: "sprite-list-on"})
       nav.add(button2, "left")
       
       var list = vk.list('.body')      

@@ -2628,7 +2628,6 @@ function NavBar(target, className) {
   events.EventEmitter.call(this)
   if (className) {
     this.className = className
-    $(target).addClass(className)
   }
   this.target = target
   this.items = {
@@ -2753,7 +2752,7 @@ function ActionButton(options) {
  */
 
 util.inherits(ActionButton, vk.Button)
-})(vk, "<a href=\"{{href}}\" class=\"{{linkClass}}\">\n  <div id=\"{{id}}\" class=\"{{className}}\">\n    {{#sprite}}<span class=\"{{sprite}} sprite\"></span>{{/sprite}}\n    {{#text}}<span class=\"label\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div id=\"{{id}}\" class=\"{{className}}\">\n    {{#sprite}}<span class=\"{{sprite}} sprite\"></span>{{/sprite}}\n    {{#text}}<span class=\"label\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `NavButton`.
