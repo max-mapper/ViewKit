@@ -29,8 +29,10 @@
   -o-box-align: center;
   box-align: center; 
 }
-.left.buttons .actionButton { margin-left: 5px; }
-.right.buttons .actionButton { margin-right: 5px; }
+.left.buttons { margin-left: 2px; }
+.left.buttons .actionButton { margin-left: 3px; }
+.right.buttons .actionButton { margin-right: 3px; }
+.right.buttons { margin-right: 2px; }
 .left.buttons a { float: left; }
 .right.buttons a { float: right; }
 .right.buttons a:active div { }
