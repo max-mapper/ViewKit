@@ -25,8 +25,14 @@
       var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
       nav.add(button)
       
-      var button2 = vk.actionButton({target: '.left.buttons', href: "#/submit!", id: "home", text: "Home"})
-      nav.add(button2)
+      // <a href="#/list!" class="hasActive">
+      //   <div id="list-icon" class="nav-icon">
+      //     <div data-view="list" class="list on sprite"></div>
+      //   </div>
+      // </a>
+      
+      var button2 = vk.actionButton({href: "#/submit!", id: "list-icon", text: "", className: "list on sprite"})
+      nav.add(button2, "left")
       
       var list = vk.list('.body')      
       "hello this is a test of many many many many many many many many many many many many rows of data".split(' ').forEach(function(word) {

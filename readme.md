@@ -7,3 +7,7 @@ Relies on browserified node libraries such as EventEmitter
 generate `lib/browserify/bundle.js` with `browserify -r util -r events -r stream -r mustache -r dominode.js -r masseuse -o lib/browserify/bundle.js`
 
 compile `build/` with `make`
+
+generate sprites by executing this commands from the `lib/` folder:
+
+    glue sprite sprite-dist --retina --algorithm=vertical --namespace=""

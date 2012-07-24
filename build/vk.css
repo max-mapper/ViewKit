@@ -113,3 +113,81 @@
 .ui-content .broadcastContainer { overflow: auto; background-color: #f6f6f6; border-top: 1px solid #aeaeae; padding: 0 0 8px 0; }
 .ui-content .broadcastContainer .section-label { font-size: 11.32px; color: #555555; text-shadow: 0 1px 0 white; text-transform: uppercase; font-family: "Open Sans Bold"; margin: 8px 8px 2px 8px; display: block;}
 .ui-content .adminContainer { overflow: auto; border-top: 1px solid #d0d0d0; padding: 5px 0 0 0; }
+.sprite-toggle-on,
+.sprite-toggle-off,
+.sprite-map-on,
+.sprite-map-off,
+.sprite-map-active,
+.sprite-list-on,
+.sprite-list-off,
+.sprite-list-active,
+.sprite-icon-where-on,
+.sprite-icon-where-off,
+.sprite-icon-when-on,
+.sprite-icon-when-off,
+.sprite-button-secondary-rightcap,
+.sprite-button-secondary-repeatx,
+.sprite-button-secondary-nipple,
+.sprite-button-secondary-leftcap,
+.sprite-button-primary-rightcap,
+.sprite-button-primary-leftcap,
+.sprite-button-main-repeatx,
+.sprite-icon-refresh,
+.sprite-icon-refresh-white,
+.sprite-icon-edit,
+.sprite-icon-check,
+.sprite-icon-question,
+.sprite-triangle-orange,
+.sprite-triangle-grey{background-image:url(sprite.png);background-repeat:no-repeat}
+.sprite-toggle-on{background-position:0px 0px;width:50px;height:23px;}
+.sprite-toggle-off{background-position:0px -23px;width:50px;height:23px;}
+.sprite-map-on{background-position:0px -46px;width:44px;height:40px;}
+.sprite-map-off{background-position:0px -86px;width:44px;height:40px;}
+.sprite-map-active{background-position:0px -126px;width:44px;height:40px;}
+.sprite-list-on{background-position:0px -166px;width:44px;height:40px;}
+.sprite-list-off{background-position:0px -206px;width:44px;height:40px;}
+.sprite-list-active{background-position:0px -246px;width:44px;height:40px;}
+.sprite-icon-where-on{background-position:0px -286px;width:40px;height:40px;}
+.sprite-icon-where-off{background-position:0px -326px;width:40px;height:40px;}
+.sprite-icon-when-on{background-position:0px -366px;width:40px;height:40px;}
+.sprite-icon-when-off{background-position:0px -406px;width:40px;height:40px;}
+.sprite-button-secondary-rightcap{background-position:0px -446px;width:4px;height:40px;}
+.sprite-button-secondary-repeatx{background-position:0px -486px;width:10px;height:40px;}
+.sprite-button-secondary-nipple{background-position:0px -526px;width:10px;height:40px;}
+.sprite-button-secondary-leftcap{background-position:0px -566px;width:4px;height:40px;}
+.sprite-button-primary-rightcap{background-position:0px -606px;width:4px;height:40px;}
+.sprite-button-primary-leftcap{background-position:0px -646px;width:4px;height:40px;}
+.sprite-button-main-repeatx{background-position:0px -686px;width:10px;height:40px;}
+.sprite-icon-refresh{background-position:0px -726px;width:21px;height:25px;}
+.sprite-icon-refresh-white{background-position:0px -751px;width:24px;height:23px;}
+.sprite-icon-edit{background-position:0px -772px;width:21px;height:20px;}
+.sprite-icon-check{background-position:0px -792px;width:19px;height:16px;}
+.sprite-icon-question{background-position:0px -808px;width:16px;height:16px;}
+.sprite-triangle-orange{background-position:0px -824px;width:10px;height:11px;}
+.sprite-triangle-grey{background-position:0px -835px;width:10px;height:11px;}
+@media only screen and (-webkit-min-device-pixel-ratio: 2.0), only screen and (min--moz-device-pixel-ratio: 2.0), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2.0) {.sprite-toggle-on,
+.sprite-toggle-off,
+.sprite-map-on,
+.sprite-map-off,
+.sprite-map-active,
+.sprite-list-on,
+.sprite-list-off,
+.sprite-list-active,
+.sprite-icon-where-on,
+.sprite-icon-where-off,
+.sprite-icon-when-on,
+.sprite-icon-when-off,
+.sprite-button-secondary-rightcap,
+.sprite-button-secondary-repeatx,
+.sprite-button-secondary-nipple,
+.sprite-button-secondary-leftcap,
+.sprite-button-primary-rightcap,
+.sprite-button-primary-leftcap,
+.sprite-button-main-repeatx,
+.sprite-icon-refresh,
+.sprite-icon-refresh-white,
+.sprite-icon-edit,
+.sprite-icon-check,
+.sprite-icon-question,
+.sprite-triangle-orange,
+.sprite-triangle-grey{background-image:url(sprite@2x.png);-webkit-background-size: 50px 847px;-moz-background-size: 50px 847px;background-size: 50px 847px;}}

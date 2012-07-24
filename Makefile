@@ -15,3 +15,6 @@ all:
 	@cat lib/browserify/bundle.js > build/vk.js
 	@cat lib/prelude.js >> build/vk.js
 	@./support/build.js $(COMPONENTS)
+	@cp lib/sprite-dist/* build/
+	@cat build/sprite.css >> build/vk.css
+	@rm build/sprite.css
