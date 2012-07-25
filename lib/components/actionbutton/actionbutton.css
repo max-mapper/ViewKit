@@ -1,4 +1,3 @@
-.actionButton {display: box; box-flex: 1;}
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
 .nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
@@ -17,8 +16,6 @@
 .nav-button#following div { margin: 9px 7px 0px 2px; }
 .nav-button#following span {margin: 0 0 3px 7px;}
 
-/*.nav-button.action span { display: inline-block; position: relative; top: 6px; }
-*/
 .buttons { 
   -webkit-box-flex: 1;
   -moz-box-flex: 1;

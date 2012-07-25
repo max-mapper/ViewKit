@@ -15,6 +15,26 @@
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
+.nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
+.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); 
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: box;
+}
+.bottomNav .center.buttons { display: -webkit-box; display: -moz-box; display: box; }
+.bottomNav .selected { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
+.bottomNav .refreshIcon { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; }
+.bottomNav .refreshIcon:active { background-color: #C7DECC; }
+.bottomNav .refreshIcon .sprite { position: relative; top: 7px; left: 8px; }
+.bottomNav .refreshIcon .sprite.spinning { background: url('images/transparent-loader.gif') no-repeat 3px 4px; background-size: initial; }
+.nav-button.following { font-size: 13.5px; font-weight: bold; border-bottom-left-radius: 5px; }
+.nav-button.settings { border-bottom-right-radius: 5px;  }
+.whitePlaceholder { height: 54px; width: 100%; background: white;}
 .topNav { z-index: 666; width: 100%; height: 49px; border-bottom: 1px solid #6d8f75; position: fixed; top: 0px; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -29,19 +49,6 @@
 
 
 
-.nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); }
-.bottomNav .center.buttons { display: -webkit-box; display: -moz-box; display: box; }
-.bottomNav .right.buttons { height: 53px; float: right; }
-.bottomNav .selected { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
-.bottomNav .refreshIcon { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; }
-.bottomNav .refreshIcon:active { background-color: #C7DECC; }
-.bottomNav .refreshIcon .sprite { position: relative; top: 7px; left: 8px; }
-.bottomNav .refreshIcon .sprite.spinning { background: url('images/transparent-loader.gif') no-repeat 3px 4px; background-size: initial; }
-.nav-button.following { font-size: 13.5px; font-weight: bold; border-bottom-left-radius: 5px; }
-.nav-button.settings { border-bottom-right-radius: 5px;  }
-.whitePlaceholder { height: 54px; width: 100%; background: white;}
-.actionButton {display: box; box-flex: 1;}
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
 .nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
@@ -60,8 +67,6 @@
 .nav-button#following div { margin: 9px 7px 0px 2px; }
 .nav-button#following span {margin: 0 0 3px 7px;}
 
-/*.nav-button.action span { display: inline-block; position: relative; top: 6px; }
-*/
 .buttons { 
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -80,9 +85,9 @@
 .right.buttons a { float: right; }
 .right.buttons a:active div { }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav a { display: block; line-height: 36px; text-align: center; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1;}
-.bottomNav a.refreshButton { width: 38px; height: 38px; display: block; margin: 8px 0px 7px 4px; }
-.bottomButton { border-radius: 3px; padding: 8px 0px 7px 4px; height: 38px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomNav a { display: block; text-align: center; }
+.bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
+.bottomButton { border-radius: 3px; padding: 8px 0px 7px 4px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
 .ui-content { z-index:2 !important; position: absolute; background: white; font-family: Open Sans; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc; }
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }

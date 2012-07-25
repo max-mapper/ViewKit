@@ -38,10 +38,19 @@
       var footer = vk.navBar('.footer', 'bottomNav')
       
       var listButton = vk.navButton({href: "#/list", id: "list", text: "List"})
-      footer.add(listButton)
+      footer.add(listButton, 'left')
       
       var mapButton = vk.navButton({href: "#/map", id: "map", text: "Map"})
-      footer.add(mapButton)
+      footer.add(mapButton, 'left')
+      
+      //<a class="refreshButton" href="#/refresh!">
+      //  <div class="refreshIcon">
+      //    <div class="sprite icon-refresh-white"></div>
+      //  </div>
+      //</a>
+      
+      var refreshButton = vk.actionButton({href: "#/refresh!", id: "refresh-icon", text: "", className: "sprite-icon-refresh-white"})
+      footer.add(refreshButton, 'right')
       
     </script>
   </body>
