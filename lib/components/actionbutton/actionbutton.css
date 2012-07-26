@@ -30,7 +30,4 @@
 .left.buttons .actionButton { margin-left: 3px; }
 .right.buttons .actionButton { margin-right: 3px; }
 .right.buttons { margin-right: 2px; }
-.left.buttons a { float: left; }
-.right.buttons a { float: right; }
-.right.buttons a:active div { }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }

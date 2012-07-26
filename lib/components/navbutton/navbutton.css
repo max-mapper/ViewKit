@@ -1,4 +1,4 @@
 .bottomNav a { display: block; text-align: center; }
 .bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
-.bottomButton { border-radius: 3px; padding: 8px 21px 7px 21px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomButton { border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
