@@ -26,8 +26,7 @@
   display: box;
 }
 
-
-
+.topNav .left.buttons .actionButton { float: left; }
 
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); 
@@ -51,7 +50,7 @@
 .bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
 .bottomNav .left.buttons a { -webkit-box-flex: 1; }
 .bottomNav .right.buttons a { float: right; }
-.bottomNav .center.buttons { -webkit-box-flex: 0; }.nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
+.nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
 .nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
 .nav-button.round .label { margin: 0 10px; }
@@ -70,6 +69,7 @@
 .nav-button#following span {margin: 0 0 3px 7px;}
 
 .buttons { 
+  overflow: auto;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
@@ -90,7 +90,7 @@
 .bottomButton:active { color: white; }
 .ui-content { z-index:2 !important; position: absolute; background: white; font-family: Open Sans; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc; }
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
-.ui-content .items { height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
+.ui-content .items { overflow: scroll; }
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }

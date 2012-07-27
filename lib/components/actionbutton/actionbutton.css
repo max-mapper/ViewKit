@@ -17,6 +17,7 @@
 .nav-button#following span {margin: 0 0 3px 7px;}
 
 .buttons { 
+  overflow: auto;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;

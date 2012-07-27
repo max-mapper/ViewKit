@@ -2632,7 +2632,6 @@ function NavBar(target, className) {
   this.target = target
   this.items = {
     left: [],
-    center: [],
     right: []
   }
 }
@@ -2663,7 +2662,7 @@ NavBar.prototype.render = function() {
  */
 
 NavBar.prototype.build = function(side) {
-  return this.items[side || 'center'].map(function(item) {
+  return this.items[side || 'left'].map(function(item) {
     return $(item.build())[0]
   })
 }
@@ -2673,11 +2672,11 @@ NavBar.prototype.build = function(side) {
  */
 
 NavBar.prototype.add = function(item, side) {
-  this.items[side || 'center'].push(item)
+  this.items[side || 'left'].push(item)
   this.render()
 }
 
-})(vk, "<div class=\"{{className}}\">\n  <div class=\"left buttons\"></div>\n  <div class=\"center buttons\"></div>\n  <div class=\"right buttons\"></div>\n</div>");
+})(vk, "<div class=\"{{className}}\">\n  <div class=\"left buttons\"></div>\n  <div class=\"right buttons\"></div>\n</div>");
 ;(function(exports){
 /**
  * Expose `Button`

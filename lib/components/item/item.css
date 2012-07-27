@@ -1,5 +1,5 @@
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
-.ui-content .items { height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
+.ui-content .items { overflow: scroll; }
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }
