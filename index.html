@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="demo/style.css">
 
     <script src="build/vk.js"></script>
+    <script src="demo/touch-scroll.js"></script>
     <link rel="stylesheet" href="build/vk.css">
   </head>
   <body>
-    <div class="nav"></div>
-    <div class="body"></div>
-    <div class="footer"></div>
+    
+    <div class="ui-content">
+      <div class="nav"></div>
+      <div class="items"></div>
+      <div class="footer"></div>
+    </div>
+    
     <script type="text/javascript">
       
-      var container = vk.container()
+      var container = vk.container('.ui-content')
       
       var nav = vk.navBar('.nav', 'topNav')
       
@@ -30,11 +35,11 @@
       var button3 = vk.actionButton({href: "#/map", id: "map-icon", text: "", className: "sprite-map-off"})
       nav.add(button3, "left")
 
-      var list = vk.list('.body')      
+      var list = vk.list('.items')      
       "hello this is a test of many many many many many many many many many many many many rows of data".split(' ').forEach(function(word) {
         list.add(vk.item({'title': word}))
       })
-
+      
       var footer = vk.navBar('.footer', 'bottomNav')
       
       var listButton = vk.navButton({href: "#/list", id: "list", text: "List"})

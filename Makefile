@@ -5,7 +5,6 @@ COMPONENTS = container \
 	button \
 	actionbutton \
 	navbutton \
-	scrollarea \
 	list \
 	item
   

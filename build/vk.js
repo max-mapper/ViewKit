@@ -2578,22 +2578,22 @@ exports.Container = Container
  * Create a new `Container`
  */
 
-exports.container = function(options) {
-  return new Container(options)
+exports.container = function(target) {
+  return new Container(target)
 }
 
 /**
  * Initialize a new `Container`
  */
 
-function Container(options) {
+function Container(target) {
   events.EventEmitter.call(this)
-  this.options = $.extend({}, this.options, options)
   // grab from current scope if available
   if (typeof template !== "undefined") this.template = template
-  if (!this.options.target) this.options.target = "body"
-  $(this.options.target).addClass('vk-container')
-  masseuse.listenForTouches(this.options.target)
+  if (!target) target = "body"
+  this.target = target
+  $(this.target).addClass('vk-container')
+  masseuse.listenForTouches(this.target)
 }
 
 /**
@@ -2623,8 +2623,8 @@ exports.navBar = function(target, className) {
 
 function NavBar(target, className) {
   // grab from global scope
-  this.template = mustache.to_html(template, {className: className})
-  $(target).html(template)
+  this.template = mustache.to_html(template)
+  $(target).addClass(className).html(template)
   events.EventEmitter.call(this)
   if (className) {
     this.className = className
@@ -2676,7 +2676,7 @@ NavBar.prototype.add = function(item, side) {
   this.render()
 }
 
-})(vk, "<div class=\"{{className}}\">\n  <div class=\"left buttons\"></div>\n  <div class=\"right buttons\"></div>\n</div>");
+})(vk, "<div class=\"left buttons\"></div>\n<div class=\"right buttons\"></div>\n");
 ;(function(exports){
 /**
  * Expose `Button`
@@ -2786,41 +2786,6 @@ util.inherits(NavButton, vk.Button)
 })(vk, "<a href=\"{{href}}\"><div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">{{text}}</div></a>\n");
 ;(function(exports, template){
 /**
- * Expose `ScrollArea`.
- */
-
-exports.ScrollArea = ScrollArea
-
-/**
- * Create a new `ScrollArea`.
- */
-
-exports.scrollArea = function(target) {
-  return new ScrollArea(target)
-}
-
-/**
- * Initialize a new `ScrollArea`
- */
-
-function ScrollArea(target) {
-  events.EventEmitter.call(this)
-
-  // grab template from current scope
-  this.el = $(template)
-  
-  $(target).html(this.el)
-}
-
-/**
- * Inherit from EventEmitter
- */
-
-util.inherits(ScrollArea, events.EventEmitter)
-
-})(vk, "<div class=\"ui-content\"></div>");
-;(function(exports, template){
-/**
  * Expose `List`.
  */
 
@@ -2830,25 +2795,28 @@ exports.List = List
  * Create a new `List`.
  */
 
-exports.list = function(target) {
-  return new List(target)
+exports.list = function(target, className) {
+  return new List(target, className)
 }
 
 /**
  * Initialize a new `List`
  */
 
-function List(target) {
-  vk.ScrollArea.call(this, target)
+function List(target, className) {
+  events.EventEmitter.call(this, target)
+  if (!className) className = "items"
+  this.className = className
   this.template = template
+  this.el = $(target)
   this.items = []
 }
 
 /**
- * Inherit from ScrollArea
+ * Inherit from EventEmitter
  */
 
-util.inherits(List, vk.ScrollArea)
+util.inherits(List, events.EventEmitter)
 
 List.prototype.add = function(item) {
   this.items.push(item)
@@ -2858,13 +2826,20 @@ List.prototype.add = function(item) {
 List.prototype.render = function() {
   var rendered = mustache.to_html(
     this.template,
-    {items: this.items.map(function(item){ return item.data })},
+    {items: this.items.map(function(item){ return item.data }), className: this.className},
     {itemTemplate: this.items[0].template}
   )
   this.el.html(rendered)
+  if (navigator.userAgent.match(/iPhone OS 4/i)) {
+    this.el.find('.scroller').css({'overflow': 'visible'}).touchScroll()
+  }
+  if (navigator.userAgent.match(/Android 2/i)) {
+    var scroller = this.el.find('.scroller')
+    scroller.css({'height': 'auto', 'padding-bottom': '55px'})
+  }
 }
 
-})(vk, "<div class=\"items\">\n  {{#items}}\n    {{> itemTemplate}}\n  {{/items}}\n</div>\n");
+})(vk, "<div class=\"scroller\">\n  {{#items}}\n    {{> itemTemplate}}\n  {{/items}}\n</div>\n");
 ;(function(exports, template){
 /**
  * Expose `Item`.

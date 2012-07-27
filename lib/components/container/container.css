@@ -1,3 +1,5 @@
+html, body { height: 100%; }
+
 .vk-container * {
   /* prevent callout to copy image, etc when tap to hold */
   -webkit-touch-callout: none; 
@@ -15,3 +17,5 @@
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
+
+.vk-container { height: 100%; }

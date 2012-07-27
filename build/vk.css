@@ -1,3 +1,5 @@
+html, body { height: 100%; }
+
 .vk-container * {
   /* prevent callout to copy image, etc when tap to hold */
   -webkit-touch-callout: none; 
@@ -15,7 +17,8 @@
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
-.topNav { z-index: 666; width: 100%; height: 49px; border-bottom: 1px solid #6d8f75; position: fixed; top: 0px; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
+
+.vk-container { height: 100%; }.topNav { position: fixed; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -88,9 +91,8 @@
 .bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
 .bottomButton { border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
-.ui-content { z-index:2 !important; position: absolute; background: white; font-family: Open Sans; top: 50px; bottom: 55px; right: 0; left: 0; border-top: 1px solid #cccccc; }
-.ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
-.ui-content .items { overflow: scroll; }
+.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; -webkit-overflow-scrolling: touch; position: absolute; top: 50px; left: 0; bottom: 55px; right: 0; }
+.ui-content .scroller { overflow: scroll; height: 100%; }.ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }
@@ -111,7 +113,6 @@
 .ui-content .compassContainer .compass-macro { position: relative; top: -8px; }
 .ui-content .venueMap .distance {font-size: 15.85px; font-family: 'Open Sans Bold'; color: #363636; position: absolute; top: 10px; right: 14px; }
 .ui-content .label { position: absolute; top: 25px; right: 19px; font-size: 11.32px; font-weight: bold; color: #707070; }
-.ui-content .left { float: left; overflow: hidden; width: 100%; }
 .ui-content .loadingContainer { margin: 50px auto; text-align: center; }
 .ui-content .inputContainer { padding-right: 52px; padding-left: 1px; margin-right: 2px; }
 .ui-content .inputContainer.rightArrow { padding-right: 68px; padding-left: 1px; margin-right: 2px; }
