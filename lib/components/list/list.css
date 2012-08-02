@@ -1,2 +1,20 @@
-.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; -webkit-overflow-scrolling: touch; position: absolute; top: 50px; left: 0; bottom: 55px; right: 0; }
-.ui-content .scroller { overflow: scroll; height: 100%; }
+/*.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; -webkit-overflow-scrolling: touch; position: relative;  overflow: hidden; }
+.ui-content .scroller {  }
+
+*/
+.items {
+  position:absolute;
+  z-index:1;
+  top:50px; bottom:55px;
+  width:100%;
+  overflow:auto;
+}
+
+.scroller {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+}
+
+.scroller > a { display: block; }

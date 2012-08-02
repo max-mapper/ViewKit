@@ -2751,7 +2751,7 @@ function ActionButton(options) {
  */
 
 util.inherits(ActionButton, vk.Button)
-})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div id=\"{{id}}\" class=\"{{className}}\">\n    {{#sprite}}<div class=\"{{sprite}} sprite\"></div>{{/sprite}}\n    {{#text}}<span class=\"label\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div id=\"{{id}}\" class=\"{{className}}\">\n    {{#sprite}}<div class=\"{{sprite}} sprite\"></div>{{/sprite}}\n    {{#text}}<span class=\"buttonLabel\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `NavButton`.
@@ -2783,7 +2783,7 @@ function NavButton(options) {
  */
 
 util.inherits(NavButton, vk.Button)
-})(vk, "<a href=\"{{href}}\"><div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">{{text}}</div></a>\n");
+})(vk, "<a href=\"{{href}}\">\n  <div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">\n    {{text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `List`.
@@ -2810,6 +2810,7 @@ function List(target, className) {
   this.template = template
   this.el = $(target)
   this.items = []
+  this.bindCompatibilityEvents()
 }
 
 /**
@@ -2819,8 +2820,12 @@ function List(target, className) {
 util.inherits(List, events.EventEmitter)
 
 List.prototype.add = function(item) {
-  this.items.push(item)
-  this.render()
+  var self = this
+  if (!_.isArray(item)) item = [item]
+  item.forEach(function(i) {
+    self.items.push(i)
+  })
+  self.render()
 }
 
 List.prototype.render = function() {
@@ -2830,8 +2835,13 @@ List.prototype.render = function() {
     {itemTemplate: this.items[0].template}
   )
   this.el.html(rendered)
+  this.bindCompatibilityEvents()
+}
+
+List.prototype.bindCompatibilityEvents = function() {
   if (navigator.userAgent.match(/iPhone OS 4/i)) {
-    this.el.find('.scroller').css({'overflow': 'visible'}).touchScroll()
+    var scroller = this.el.find('.scroller')
+    scroller.parents().first().jScroll()
   }
   if (navigator.userAgent.match(/Android 2/i)) {
     var scroller = this.el.find('.scroller')

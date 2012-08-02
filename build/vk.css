@@ -84,15 +84,35 @@ html, body { height: 100%; }
 }
 .left.buttons { margin-left: 2px; }
 .left.buttons .actionButton { margin-left: 3px; }
-.right.buttons .actionButton { margin-right: 3px; }
+.right.buttons .actionButton { float: right; margin-right: 3px; }
 .right.buttons { margin-right: 2px; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
+.actionButton .buttonLabel { padding: 0 10px; }
 .bottomNav a { display: block; text-align: center; }
 .bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
 .bottomButton { border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
-.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; -webkit-overflow-scrolling: touch; position: absolute; top: 50px; left: 0; bottom: 55px; right: 0; }
-.ui-content .scroller { overflow: scroll; height: 100%; }.ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
+/*.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; -webkit-overflow-scrolling: touch; position: relative;  overflow: hidden; }
+.ui-content .scroller {  }
+
+*/
+.items {
+  position:absolute;
+  z-index:1;
+  top:50px; bottom:55px;
+  width:100%;
+  overflow:auto;
+}
+
+.scroller {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+}
+
+.scroller > a { display: block; }
+.ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }

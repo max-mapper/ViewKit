@@ -29,6 +29,7 @@
 }
 .left.buttons { margin-left: 2px; }
 .left.buttons .actionButton { margin-left: 3px; }
-.right.buttons .actionButton { margin-right: 3px; }
+.right.buttons .actionButton { float: right; margin-right: 3px; }
 .right.buttons { margin-right: 2px; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
+.actionButton .buttonLabel { padding: 0 10px; }

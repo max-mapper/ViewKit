@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="demo/style.css">
 
     <script src="build/vk.js"></script>
-    <script src="demo/touch-scroll.js"></script>
+    <script src="demo/iscroll.js"></script>
+    <script src="demo/jScroll.js"></script>
     <link rel="stylesheet" href="build/vk.css">
   </head>
   <body>
@@ -36,9 +37,9 @@
       nav.add(button3, "left")
 
       var list = vk.list('.items')      
-      "hello this is a test of many many many many many many many many many many many many rows of data".split(' ').forEach(function(word) {
-        list.add(vk.item({'title': word}))
-      })
+      list.add("hello this is a test of many many many many many many many many many many many many rows of data".split(' ').map(function(word) {
+        return vk.item({'title': word})
+      }))
       
       var footer = vk.navBar('.footer', 'bottomNav')
       
