@@ -92,26 +92,17 @@ html, body { height: 100%; }
 .bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
 .bottomButton { border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
-/*.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; -webkit-overflow-scrolling: touch; position: relative;  overflow: hidden; }
-.ui-content .scroller {  }
+/* browser compat notes: */
+/* for .ui-content .items there needs to be a bottom: 55px; set for all browsers except android 2.x */
+/* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
+/* even if you un-set it in js after it renders */
+/* due to these constraints these values are set by JS instead of here */
+.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; overflow: auto; width: 100%; }
 
-*/
-.items {
-  position:absolute;
-  z-index:1;
-  top:50px; bottom:55px;
-  width:100%;
-  overflow:auto;
-}
-
-.scroller {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  padding: 0;
-}
+.ui-content .scroller { width: 100%; }
 
 .scroller > a { display: block; }
+
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
