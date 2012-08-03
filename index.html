@@ -31,9 +31,9 @@
       var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
       nav.add(button, "right")
       
-      var button2 = vk.actionButton({href: "#/list", id: "list-icon", text: "", className: "sprite-list-off"})
+      var button2 = vk.actionButton({href: "#/list", id: "list-button", text: "", className: "sprite-list-off"})
       nav.add(button2, "left")
-      var button3 = vk.actionButton({href: "#/map", id: "map-icon", text: "", className: "sprite-map-off"})
+      var button3 = vk.actionButton({href: "#/map", id: "map-button", text: "", className: "sprite-map-off"})
       nav.add(button3, "left")
 
       var list = vk.list('.items')      
@@ -43,13 +43,13 @@
       
       var footer = vk.navBar('.footer', 'bottomNav')
       
-      var listButton = vk.navButton({href: "#/list", id: "list", text: "List"})
-      footer.add(listButton, 'left')
+      var readButton = vk.navButton({href: "#/read", id: "read-button", text: "Read"})
+      footer.add(readButton, 'left')
       
-      var mapButton = vk.navButton({href: "#/map", id: "map", text: "Map"})
-      footer.add(mapButton, 'left')
+      var unreadButton = vk.navButton({href: "#/unread", id: "unread-button", text: "Unread"})
+      footer.add(unreadButton, 'left')
       
-      var refreshButton = vk.actionButton({href: "#/refresh!", linkClass: "refreshButton", id: "refresh-icon", text: "", className: "refreshIcon", sprite: "sprite-icon-refresh-white"})
+      var refreshButton = vk.actionButton({href: "#/refresh!", linkClass: "refreshButton", id: "refresh-button", text: "", className: "refreshIcon", sprite: "sprite-icon-refresh-white"})
       footer.add(refreshButton, 'right')
       
     </script>

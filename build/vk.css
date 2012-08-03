@@ -42,7 +42,7 @@ html, body { height: 100%; }
   display: -o-box;
   display: box;
 }
-.bottomNav .selected { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
+.bottomNav .active { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
 .bottomNav .refreshIcon { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; display: -webkit-box; -webkit-box-align: center; }
 .bottomNav .refreshIcon:active { background-color: #C7DECC; }
 .bottomNav .refreshIcon .sprite { margin: 0 auto; -webkit-box-align: center; }
@@ -90,7 +90,7 @@ html, body { height: 100%; }
 .actionButton .buttonLabel { padding: 0 10px; }
 .bottomNav a { display: block; text-align: center; }
 .bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
-.bottomButton { border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomButton { line-height: 38px; height: 38px; border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
 /* browser compat notes: */
 /* for .ui-content .items there needs to be a bottom: 55px; set for all browsers except android 2.x */

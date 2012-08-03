@@ -2695,7 +2695,7 @@ NavBar.prototype.switchNav = function(view) {
     }).join(' ')
   }
   
-  $(this.target + ' #' + view + '-icon').addClass(on + ' active').removeClass(off)
+  $(this.target + ' #' + view + '-button').addClass(on + ' active').removeClass(off)
   // TODO support multiple containers on a single page
   // $('.vk-container').attr('id', currentViewState())
 }
@@ -2807,7 +2807,7 @@ function NavButton(options) {
  */
 
 util.inherits(NavButton, vk.Button)
-})(vk, "<a href=\"{{href}}\">\n  <div {{#page}}data-page=\"{{page}}\"{{/page}} class=\"bottomButton {{className}}\">\n    {{text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\">\n  <div {{#page}}data-page=\"{{page}}\"{{/page}} id=\"{{id}}\" class=\"bottomButton {{className}}\">\n    {{text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `List`.
