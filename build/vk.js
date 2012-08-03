@@ -2676,6 +2676,30 @@ NavBar.prototype.add = function(item, side) {
   this.render()
 }
 
+/**
+ * Switches active/inactive classes on buttons
+ */
+
+NavBar.prototype.switchNav = function(view) {
+  if (view.length === 0) return
+  var on = 'sprite-' + view + '-on'
+  var off = 'sprite-' + view + '-off'
+  
+  // TODO figure out less crappy way of doing this
+  var active = $(this.target + ' .active')
+  if (active.length > 0) {
+    active.removeClass('active')
+    active[0].className = active[0].className.split(' ').map(function(className) {
+      if (className.match(/^sprite-.*-on$/)) return className.replace('-on', '-off')
+      return className
+    }).join(' ')
+  }
+  
+  $(this.target + ' #' + view + '-icon').addClass(on + ' active').removeClass(off)
+  // TODO support multiple containers on a single page
+  // $('.vk-container').attr('id', currentViewState())
+}
+
 })(vk, "<div class=\"left buttons\"></div>\n<div class=\"right buttons\"></div>\n");
 ;(function(exports){
 /**
