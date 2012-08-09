@@ -4,12 +4,14 @@ var require = function (file, cwd) {
     if (!mod) throw new Error(
         'Failed to resolve module ' + file + ', tried ' + resolved
     );
-    var res = mod._cached ? mod._cached : mod();
+    var cached = require.cache[resolved];
+    var res = cached? cached.exports : mod();
     return res;
-}
+};
 
 require.paths = [];
 require.modules = {};
+require.cache = {};
 require.extensions = [".js",".coffee"];
 
 require._core = {
@@ -119,7 +121,7 @@ require.alias = function (from, to) {
     
     var keys = (Object.keys || function (obj) {
         var res = [];
-        for (var key in obj) res.push(key)
+        for (var key in obj) res.push(key);
         return res;
     })(require.modules);
     
@@ -149,17 +151,31 @@ require.alias = function (from, to) {
         ;
         
         var require_ = function (file) {
-            return require(file, dirname)
+            var requiredModule = require(file, dirname);
+            var cached = require.cache[require.resolve(file, dirname)];
+
+            if (cached.parent === null) {
+                cached.parent = module_;
+            }
+
+            return requiredModule;
         };
         require_.resolve = function (name) {
             return require.resolve(name, dirname);
         };
         require_.modules = require.modules;
         require_.define = require.define;
-        var module_ = { exports : {} };
+        require_.cache = require.cache;
+        var module_ = {
+            id : filename,
+            filename: filename,
+            exports : {},
+            loaded : false,
+            parent: null
+        };
         
         require.modules[filename] = function () {
-            require.modules[filename]._cached = module_.exports;
+            require.cache[filename] = module_;
             fn.call(
                 module_.exports,
                 require_,
@@ -169,7 +185,7 @@ require.alias = function (from, to) {
                 filename,
                 process
             );
-            require.modules[filename]._cached = module_.exports;
+            module_.loaded = true;
             return module_.exports;
         };
     };
@@ -972,7 +988,7 @@ Stream.prototype.pipe = function(dest, options) {
 
 require.define("/node_modules/mustache/package.json",function(require,module,exports,__dirname,__filename,process){module.exports = {"main":"./mustache"}});
 
-require.define("/node_modules/mustache/mustache.js",function(require,module,exports,__dirname,__filename,process){/*
+require.define("mustache",function(require,module,exports,__dirname,__filename,process){/*
  * CommonJS-compatible mustache.js module
  *
  * See http://github.com/janl/mustache.js for more info.
@@ -1426,7 +1442,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
 require.define("/node_modules/underscore/package.json",function(require,module,exports,__dirname,__filename,process){module.exports = {"main":"underscore.js"}});
 
-require.define("/node_modules/underscore/underscore.js",function(require,module,exports,__dirname,__filename,process){//     Underscore.js 1.3.3
+require.define("underscore",function(require,module,exports,__dirname,__filename,process){//     Underscore.js 1.3.3
 //     (c) 2009-2012 Jeremy Ashkenas, DocumentCloud Inc.
 //     Underscore is freely distributable under the MIT license.
 //     Portions of Underscore are inspired or borrowed from Prototype,
@@ -2489,7 +2505,7 @@ require.define("/node_modules/underscore/underscore.js",function(require,module,
 
 require.define("/node_modules/masseuse/package.json",function(require,module,exports,__dirname,__filename,process){module.exports = {}});
 
-require.define("/node_modules/masseuse/index.js",function(require,module,exports,__dirname,__filename,process){function listenForTouches(scope) {
+require.define("masseuse",function(require,module,exports,__dirname,__filename,process){function listenForTouches(scope) {
   if (!scope) scope = ""
   else scope = scope + " "
   // if (!'ontouchstart' in window) {

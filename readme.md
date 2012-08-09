@@ -1,13 +1,5 @@
-## work in progress, not usable yet
+## work in progress -- alpha status
 
-ViewKit is a fork of UIKit designed for mobile WebKit WebViews. Initially designed for iOS5, it may be ported to other WebKits/mobile browsers in the future
+ViewKit is a fork of [UIKit](http://github.com/visionmedia/uikit) designed for mobile WebKit WebViews. Compatible with iOS4.2+ and Android 2.3+ browsers
 
-Relies on browserified node libraries such as EventEmitter
-
-generate `lib/browserify/bundle.js` with `browserify -r util -r events -r stream -r mustache -r dominode.js -r masseuse -o lib/browserify/bundle.js`
-
-compile `build/` with `make`
-
-generate sprites by executing this commands from the `lib/` folder:
-
-    glue sprite sprite-dist --retina --algorithm=vertical --namespace=""
+compile and package into `build/` with `make`

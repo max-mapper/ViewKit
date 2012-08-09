@@ -7,8 +7,10 @@ COMPONENTS = container \
 	navbutton \
 	list \
 	item
-  
-all:
+
+all: sprite browserify package
+
+package:
 	@rm -fr build
 	@mkdir build
 	@cat lib/browserify/bundle.js > build/vk.js
@@ -20,3 +22,6 @@ all:
 
 sprite:
 	@glue lib/sprite lib/sprite-dist --retina --algorithm=vertical --namespace=""
+
+browserify:
+	@browserify -r util -r events -r stream -r mustache -r underscore -r masseuse -o lib/browserify/bundle.js
