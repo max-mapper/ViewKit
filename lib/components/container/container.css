@@ -1,6 +1,8 @@
-html, body { height: 100%; }
+html, body { height: 100%; margin: 0; }
 
 .vk-container * {
+  font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-serif;
+  
   /* prevent callout to copy image, etc when tap to hold */
   -webkit-touch-callout: none; 
   
