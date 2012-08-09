@@ -1,5 +1,6 @@
 html, body { height: 100%; margin: 0; }
 
+
 .vk-container * {
   font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-serif;
   
@@ -15,9 +16,7 @@ html, body { height: 100%; margin: 0; }
 }
 
 .vk-container input[type="checkbox"] { -webkit-appearance:none; }
-
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
-
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
-
+.vk-container a:active .highlight { background: #fafafa; }
 .vk-container { height: 100%; }
