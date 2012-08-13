@@ -11,6 +11,7 @@
     <script src="demo/iscroll.js"></script>
     <script src="demo/jScroll.js"></script>
     <link rel="stylesheet" href="build/vk.css">
+    <link rel="stylesheet" href="build/sprite.css">
   </head>
   <body>
     
@@ -29,9 +30,9 @@
       var button = vk.actionButton({href: "#/submit!", id: "start", text: "Save"})
       nav.add(button, "right")
       
-      var button2 = vk.actionButton({href: "#/list", id: "list-button", text: "", className: "sprite-list-off"})
+      var button2 = vk.actionButton({"data-view": "list", href: "#/list", id: "list-button", text: "", className: "sprite-list-off"})
       nav.add(button2, "left")
-      var button3 = vk.actionButton({href: "#/map", id: "map-button", text: "", className: "sprite-map-off"})
+      var button3 = vk.actionButton({"data-view": "map", href: "#/map", id: "map-button", text: "", className: "sprite-map-off"})
       nav.add(button3, "left")
 
       var list = vk.list('.items')      
@@ -47,7 +48,7 @@
       var unreadButton = vk.navButton({href: "#/unread", id: "unread-button", text: "Unread"})
       footer.add(unreadButton, 'left')
       
-      var refreshButton = vk.actionButton({href: "#/refresh!", linkClass: "refreshButton", id: "refresh-button", text: "", className: "refreshIcon", sprite: "sprite-icon-refresh-white"})
+      var refreshButton = vk.actionButton({href: "#/refresh!", linkClass: "refreshButton", text: "", className: "sprite-icon-refresh-white sprite"})
       footer.add(refreshButton, 'right')
       
     </script>

@@ -1,4 +1,3 @@
 .bottomNav a { display: block; text-align: center; }
-.bottomNav a.refreshButton { display: block; margin: 8px 0px 7px 4px; }
 .bottomButton { line-height: 38px; height: 38px; border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
 .bottomButton:active { color: white; }
