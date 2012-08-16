@@ -2,10 +2,10 @@
 .sprite-toggle-off,
 .sprite-map-on,
 .sprite-map-off,
-.sprite-map-active,
+.sprite-map:active,
 .sprite-list-on,
 .sprite-list-off,
-.sprite-list-active,
+.sprite-list:active,
 .sprite-icon-where-on,
 .sprite-icon-where-off,
 .sprite-icon-when-on,
@@ -28,10 +28,10 @@
 .sprite-toggle-off{background-position:0px -23px;width:50px;height:23px;}
 .sprite-map-on{background-position:0px -46px;width:44px;height:40px;}
 .sprite-map-off{background-position:0px -86px;width:44px;height:40px;}
-.sprite-map-active{background-position:0px -126px;width:44px;height:40px;}
+.sprite-map:active{background-position:0px -126px;width:44px;height:40px;}
 .sprite-list-on{background-position:0px -166px;width:44px;height:40px;}
 .sprite-list-off{background-position:0px -206px;width:44px;height:40px;}
-.sprite-list-active{background-position:0px -246px;width:44px;height:40px;}
+.sprite-list:active{background-position:0px -246px;width:44px;height:40px;}
 .sprite-icon-where-on{background-position:0px -286px;width:40px;height:40px;}
 .sprite-icon-where-off{background-position:0px -326px;width:40px;height:40px;}
 .sprite-icon-when-on{background-position:0px -366px;width:40px;height:40px;}
@@ -54,10 +54,10 @@
 .sprite-toggle-off,
 .sprite-map-on,
 .sprite-map-off,
-.sprite-map-active,
+.sprite-map:active,
 .sprite-list-on,
 .sprite-list-off,
-.sprite-list-active,
+.sprite-list:active,
 .sprite-icon-where-on,
 .sprite-icon-where-off,
 .sprite-icon-when-on,
