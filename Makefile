@@ -15,6 +15,7 @@ sprite:
 
 enhancespritecss:
 	@sed -i "" "s/-active/:active/g" lib/sprite-dist/sprite.css
+	@sed -i "" "s/-focus/:focus/g" lib/sprite-dist/sprite.css
 
 browserify:
 	@browserify -r util -r events -r stream -r mustache -r underscore -r masseuse -o lib/browserify/bundle.js
