@@ -19,8 +19,7 @@ html, body { height: 100%; margin: 0; }
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
 .vk-container a:active .highlight { background: #fafafa; }
-.vk-container { height: 100%; }
-.topNav { position: fixed; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
+.vk-container { height: 100%; }.topNav { position: fixed; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -55,6 +54,7 @@ html, body { height: 100%; margin: 0; }
 .bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
 .bottomNav .left.buttons a { -webkit-box-flex: 1; }
 .bottomNav .right.buttons a { float: right; }
+.bottomNav.hidden { height: 0px !important; }
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
 .nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
@@ -100,10 +100,13 @@ html, body { height: 100%; margin: 0; }
 /* due to these constraints these values are set by JS instead of here */
 .ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; overflow: auto; width: 100%; }
 
-.ui-content .scroller { width: 100%; }
+/* extend scroll area to bottom if the bottomnav is hidden */
+.hidden .items { bottom: 0px !important; }
+
+/*.ui-content .scroller { width: 100%; }
 
 .scroller > a { display: block; }
-
+*/
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }

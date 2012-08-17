@@ -20,3 +20,4 @@
 .bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
 .bottomNav .left.buttons a { -webkit-box-flex: 1; }
 .bottomNav .right.buttons a { float: right; }
+.bottomNav.hidden { height: 0px !important; }

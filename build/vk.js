@@ -2716,6 +2716,18 @@ NavBar.prototype.switchNav = function(view) {
   // $('.vk-container').attr('id', currentViewState())
 }
 
+NavBar.prototype.hide = function() {
+  // TODO look up parent container div instead of global selector
+  $('.ui-content').addClass('hidden')
+  $(this.target).addClass('hidden')
+}
+
+NavBar.prototype.show = function() {
+  // TODO look up parent container div instead of global selector
+  $('.ui-content').removeClass('hidden')
+  $(this.target).removeClass('hidden')
+}
+
 })(vk, "<div class=\"left buttons\"></div>\n<div class=\"right buttons\"></div>\n");
 ;(function(exports){
 /**
