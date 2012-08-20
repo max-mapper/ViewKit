@@ -1,20 +1,24 @@
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
-.nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1}
+.nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  display: box;
+  box-pack: center;
+  box-align: center;
+}
 .nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
 .nav-button.round .label { margin: 0 10px; }
+.nav-button .labelSprite { margin-right: 5px; }
 .nav-button.srsbsns { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe8657), to(#e9794f)); color: white; text-shadow: none; font-family: 'Open Sans Bold'; margin: 0; width: 100%; }
 .nav-button.srsbsns:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9794f), to(#fe8657));}
 .nav-button.disabled { background: #727272; color: #4a4a4a;}
-.nav-button.back { position: relative; left: 7px; border-radius: 0px 3px 3px 0px; }
-.nav-button#list { width: 80px; }
-.nav-button#map { width: 79px; border-left: 1px solid #a0a0a0; }
-.nav-button#start { padding: 0 10px; font-weight: bold; color: #464646; float: right; }
-.nav-button.action { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9f2fc), to(#c5dbe4));}
+.nav-button.action { padding: 0 10px; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9f2fc), to(#c5dbe4));}
 .nav-button.action:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5dbe4), to(#d9f2fc));}
-.nav-button div { display: inline-block; margin: 8px 3px 0px 2px; line-height: 20px; }
-.nav-button#start div {  margin: 8px 3px 0px 2px; }
-.nav-button#following div { margin: 9px 7px 0px 2px; }
-.nav-button#following span {margin: 0 0 3px 7px;}
+
 
 .buttons { 
   overflow: auto;
@@ -32,4 +36,3 @@
 .right.buttons .actionButton { float: right; margin-right: 3px; }
 .right.buttons { margin-right: 2px; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.actionButton .buttonLabel { padding: 0 10px; }

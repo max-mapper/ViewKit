@@ -2803,7 +2803,7 @@ function ActionButton(options) {
  */
 
 util.inherits(ActionButton, vk.Button)
-})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div data-view=\"{{data-view}}\" id=\"{{id}}\" class=\"{{className}}\">\n    {{#text}}<span class=\"buttonLabel\">{{text}}</span>{{/text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div data-view=\"{{data-view}}\" id=\"{{id}}\" class=\"{{className}}\">\n    {{#labelSprite}}<div class=\"labelSprite {{labelSprite}}\"></div>{{/labelSprite}}\n    {{#text}}<div class=\"buttonLabel\">{{text}}</div>{{/text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `NavButton`.
