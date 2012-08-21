@@ -31,7 +31,7 @@
   -o-box-align: center;
   box-align: center; 
 }
-.left.buttons { margin-left: 2px; }
+.left.buttons { margin-left: 5px; }
 .left.buttons .actionButton { margin-left: 3px; }
 .right.buttons .actionButton { float: right; margin-right: 3px; }
 .right.buttons { margin-right: 2px; }
