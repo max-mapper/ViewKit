@@ -53,7 +53,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
 .bottomNav .left.buttons a { -webkit-box-flex: 1; }
 .bottomNav .right.buttons a { float: right; }
-.bottomNav.hidden { height: 0px !important; }
+.bottomNav.hidden { display: none; height: 0px !important; }
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1;
   display: -webkit-box;

@@ -2680,7 +2680,7 @@ NavBar.prototype.render = function() {
     var container = target.find('.' + side)
     container.append(self.build(side))    
   })
-  
+  this.makeCrossBrowserCompatible()
 }
 
 /**
@@ -2736,6 +2736,12 @@ NavBar.prototype.show = function() {
   // TODO look up parent container div instead of global selector
   $('.ui-content').removeClass('hidden')
   $(this.target).removeClass('hidden')
+}
+
+NavBar.prototype.makeCrossBrowserCompatible = function() {
+  var navBar = $(this.target)
+  // "fixed" headers have weird behavior on old android browsers
+  if (navigator.userAgent.match(/Android 2/i)) navBar.css("position", "absolute")
 }
 
 })(vk, "<div class=\"left buttons\"></div>\n<div class=\"right buttons\"></div>\n");
