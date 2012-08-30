@@ -3,7 +3,7 @@
 /* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
 /* even if you un-set it in js after it renders */
 /* due to these constraints these values are set by JS instead of here */
-.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; overflow: auto; width: 100%; }
+.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; overflow: auto; width: 100%; -webkit-overflow-scrolling: touch; }
 
 /* extend scroll area to bottom if the bottomnav is hidden */
 .hidden .items { bottom: 0px !important; }

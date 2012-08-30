@@ -53,7 +53,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
 .bottomNav .left.buttons a { -webkit-box-flex: 1; }
 .bottomNav .right.buttons a { float: right; }
-.bottomNav.hidden { display: none; height: 0px !important; }
+.bottomNav.hidden { height: 0px !important; }
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1;
   display: -webkit-box;
@@ -100,7 +100,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 /* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
 /* even if you un-set it in js after it renders */
 /* due to these constraints these values are set by JS instead of here */
-.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; overflow: auto; width: 100%; }
+.ui-content .items { z-index:2 !important; background: white; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; overflow: auto; width: 100%; -webkit-overflow-scrolling: touch; }
 
 /* extend scroll area to bottom if the bottomnav is hidden */
 .hidden .items { bottom: 0px !important; }
@@ -114,13 +114,10 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .ui-content .items .row { overflow: auto; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; 
   display: -webkit-box;
   -webkit-box-pack: center;
-  -webkit-box-align: center;
   display: -moz-box;
   -moz-box-pack: center;
-  -moz-box-align: center;
   display: box;
   box-pack: center;
-  box-align: center;
 }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }
 .ui-content .items a:nth-child(odd) .row { background-color: #fafafa;}

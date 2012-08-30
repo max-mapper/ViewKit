@@ -2553,8 +2553,10 @@ function turnOffClick(elems) {
 } 
 
 function catchModals( event ) {
-  var route = $(event.currentTarget).attr('href')
-  if (!route) return false
+  var currentTarget = $(event.currentTarget)
+  var route = currentTarget.attr('href')
+  if (!route) return
+  if (currentTarget.attr('target') === "_blank") return
   // Basic rules:
   // * If the href ends with a bang (!) we're going to return the route name
   // * Otherwise, we're going to change the page href
