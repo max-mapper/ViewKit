@@ -14,7 +14,14 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 
 }
 
-.vk-container input[type="checkbox"] { -webkit-appearance:none; }
+.vk-container input[type="checkbox"] { 
+  -webkit-appearance:none;
+  /* ios6 specific: */
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+}
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
 .vk-container a:active .highlight { background: #fafafa; }
