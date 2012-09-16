@@ -2525,6 +2525,8 @@ require.define("masseuse",function(require,module,exports,__dirname,__filename,p
       // hack around webkit bug
       var toggler = el.parent().find('.toggler')
       redraw(toggler)
+    } else if (e.target.type === "submit" || e.target.type === "button") {
+      el.parents('form').first().submit()
     } else {
       if (el.hasClass('disabled')) return false
       var type = e.target.type
