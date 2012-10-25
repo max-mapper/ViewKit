@@ -1,6 +1,7 @@
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
 .ui-content .itemDetails { margin-left: 60px; }
-.ui-content .items .row { min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; 
+.ui-content .items .row { margin: 5px; background: white; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
+.ui-content .items .topRow {
   display: -webkit-box;
   -webkit-box-pack: center;
   display: -moz-box;
@@ -9,4 +10,3 @@
   box-pack: center;
 }
 .ui-content .items .row:active { background-color: #e6e6e6 !important; }
-.ui-content .items a:nth-child(odd) .row { background-color: #fafafa;}

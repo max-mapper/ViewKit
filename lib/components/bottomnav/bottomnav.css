@@ -1,5 +1,5 @@
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #464646; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#313131), to(#464646)); 
+.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #515151; 
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
