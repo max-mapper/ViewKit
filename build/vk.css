@@ -49,7 +49,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
   display: -o-box;
   display: box;
 }
-.bottomNav .active { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
+.bottomNav .active { color: #111111; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
 .bottomNav .refreshButton { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; display: -webkit-box; }
 .bottomNav .refreshButton:active { background-color: #C7DECC; }
 .bottomNav .refreshButton .sprite { margin: 7px auto 7px auto; -webkit-box-align: center; }
@@ -100,7 +100,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .right.buttons { margin-right: 2px; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .bottomNav a { display: block; text-align: center; }
-.bottomButton { line-height: 38px; height: 38px; border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomButton { line-height: 38px; height: 38px; border-radius: 5px; padding: 0px; color: #c4c4c4; font-size: 13.58px; }
 .bottomButton:active { color: white; }
 /* browser compat notes: */
 /* for .ui-content .items there needs to be a bottom: 55px; set for all browsers except android 2.x */
@@ -120,6 +120,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { margin: 5px; background: white; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
 .ui-content .items .topRow {
+  position: relative;
   display: -webkit-box;
   -webkit-box-pack: center;
   display: -moz-box;

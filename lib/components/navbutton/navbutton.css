@@ -1,3 +1,3 @@
 .bottomNav a { display: block; text-align: center; }
-.bottomButton { line-height: 38px; height: 38px; border-radius: 3px; padding: 0px; color: #c4c4c4; font-size: 13.58px; font-weight: bold; }
+.bottomButton { line-height: 38px; height: 38px; border-radius: 5px; padding: 0px; color: #c4c4c4; font-size: 13.58px; }
 .bottomButton:active { color: white; }

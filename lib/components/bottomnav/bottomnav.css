@@ -9,7 +9,7 @@
   display: -o-box;
   display: box;
 }
-.bottomNav .active { color: #111111; text-shadow: 0 1px 0 white; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
+.bottomNav .active { color: #111111; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
 .bottomNav .refreshButton { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; display: -webkit-box; }
 .bottomNav .refreshButton:active { background-color: #C7DECC; }
 .bottomNav .refreshButton .sprite { margin: 7px auto 7px auto; -webkit-box-align: center; }
