@@ -2558,7 +2558,7 @@ function catchModals( event ) {
   var currentTarget = $(event.currentTarget)
   var route = currentTarget.attr('href')
   if (!route) return
-  if (currentTarget.attr('target') === "_blank") return
+  if (currentTarget.attr('target') === "_blank") return window.open(currentTarget.attr('href'), 'new')
   // Basic rules:
   // * If the href ends with a bang (!) we're going to return the route name
   // * Otherwise, we're going to change the page href
