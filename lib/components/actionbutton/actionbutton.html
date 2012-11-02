@@ -1,5 +1,5 @@
 <a href="{{href}}" class="actionButton {{linkClass}}">
-  <div data-view="{{data-view}}" id="{{id}}" class="{{className}}">
+  <div {{#data-view}}data-view="{{data-view}}"{{/data-view}} {{#page}}data-page="{{page}}"{{/page}} id="{{id}}" class="{{className}}">
     {{#labelSprite}}<div class="labelSprite {{labelSprite}}"></div>{{/labelSprite}}
     {{#text}}<div class="buttonLabel">{{text}}</div>{{/text}}
   </div>

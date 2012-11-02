@@ -14,6 +14,36 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 
 }
 
+.centerBoth {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  display: box;
+  box-pack: center;
+  box-align: center;
+}
+
+.centerVertical {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  display: -moz-box;
+  -moz-box-pack: center;
+  display: box;
+  box-pack: center;
+}
+
+.centerHorizontal {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-align: center;
+  display: box;
+  box-align: center;
+}
+
 .vk-container input[type="checkbox"] { 
   -webkit-appearance:none;
   /* ios6 specific: */
@@ -49,10 +79,9 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
   display: -o-box;
   display: box;
 }
-.bottomNav .active { color: #111111; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
-.bottomNav .refreshButton { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; display: -webkit-box; }
-.bottomNav .refreshButton:active { background-color: #C7DECC; }
-.bottomNav .refreshButton .sprite { margin: 7px auto 7px auto; -webkit-box-align: center; }
+.bottomNav .active.bottomButton { color: #111111; border-radius: 3px; background-color: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
+.bottomNav .iconButton { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; }
+.bottomNav .iconButton:active { background-color: #C7DECC; }
 .bottomNav .refreshButton .sprite.spinning { background: url('images/transparent-loader.gif') no-repeat 4px 4px; background-size: initial; }
 .nav-button.following { font-size: 13.5px; font-weight: bold; border-bottom-left-radius: 5px; }
 .nav-button.settings { border-bottom-right-radius: 5px;  }
@@ -99,7 +128,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .right.buttons .actionButton { float: right; margin-right: 3px; }
 .right.buttons { margin-right: 2px; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav a { display: block; text-align: center; }
+.navButton { display: block; text-align: center; }
 .bottomButton { line-height: 38px; height: 38px; border-radius: 5px; padding: 0px; color: #c4c4c4; font-size: 13.58px; }
 .bottomButton:active { color: white; }
 /* browser compat notes: */

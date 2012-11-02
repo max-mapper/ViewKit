@@ -14,6 +14,36 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 
 }
 
+.centerBoth {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  display: box;
+  box-pack: center;
+  box-align: center;
+}
+
+.centerVertical {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  display: -moz-box;
+  -moz-box-pack: center;
+  display: box;
+  box-pack: center;
+}
+
+.centerHorizontal {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-align: center;
+  display: box;
+  box-align: center;
+}
+
 .vk-container input[type="checkbox"] { 
   -webkit-appearance:none;
   /* ios6 specific: */

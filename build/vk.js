@@ -2813,6 +2813,7 @@ exports.actionButton = function(options) {
 function ActionButton(options) {
   var defaults = {target: '.right.buttons', className: 'nav-button round action'}
   this.options = _.extend({}, defaults, options)
+  if (this.options.className.match(/sprite/)) this.options.linkClass += " centerBoth"
   vk.Button.call(this, this.options)
   // grab from current scope if available
   if (typeof template !== "undefined") this.template = template
@@ -2823,7 +2824,7 @@ function ActionButton(options) {
  */
 
 util.inherits(ActionButton, vk.Button)
-})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div data-view=\"{{data-view}}\" id=\"{{id}}\" class=\"{{className}}\">\n    {{#labelSprite}}<div class=\"labelSprite {{labelSprite}}\"></div>{{/labelSprite}}\n    {{#text}}<div class=\"buttonLabel\">{{text}}</div>{{/text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\" class=\"actionButton {{linkClass}}\">\n  <div {{#data-view}}data-view=\"{{data-view}}\"{{/data-view}} {{#page}}data-page=\"{{page}}\"{{/page}} id=\"{{id}}\" class=\"{{className}}\">\n    {{#labelSprite}}<div class=\"labelSprite {{labelSprite}}\"></div>{{/labelSprite}}\n    {{#text}}<div class=\"buttonLabel\">{{text}}</div>{{/text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `NavButton`.
@@ -2855,7 +2856,7 @@ function NavButton(options) {
  */
 
 util.inherits(NavButton, vk.Button)
-})(vk, "<a href=\"{{href}}\">\n  <div {{#page}}data-page=\"{{page}}\"{{/page}} id=\"{{id}}\" class=\"bottomButton {{className}}\">\n    {{text}}\n  </div>\n</a>\n");
+})(vk, "<a href=\"{{href}}\" class=\"navButton\">\n  <div {{#page}}data-page=\"{{page}}\"{{/page}} id=\"{{id}}\" class=\"bottomButton {{className}}\">\n    {{text}}\n  </div>\n</a>\n");
 ;(function(exports, template){
 /**
  * Expose `List`.

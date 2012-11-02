@@ -1,3 +1,4 @@
+/* glue: 0.2.8 hash: 6bd2df9f9d */
 .sprite-toggle-on,
 .sprite-toggle-off,
 .sprite-map-on,
@@ -23,33 +24,33 @@
 .sprite-icon-check,
 .sprite-icon-question,
 .sprite-triangle-orange,
-.sprite-triangle-grey{background-image:url(sprite.png);background-repeat:no-repeat}
-.sprite-toggle-on{background-position:0px 0px;width:50px;height:23px;}
-.sprite-toggle-off{background-position:0px -23px;width:50px;height:23px;}
-.sprite-map-on{background-position:0px -46px;width:44px;height:40px;}
-.sprite-map-off{background-position:0px -86px;width:44px;height:40px;}
-.sprite-map:active{background-position:0px -126px;width:44px;height:40px;}
-.sprite-list-on{background-position:0px -166px;width:44px;height:40px;}
-.sprite-list-off{background-position:0px -206px;width:44px;height:40px;}
-.sprite-list:active{background-position:0px -246px;width:44px;height:40px;}
-.sprite-icon-where-on{background-position:0px -286px;width:40px;height:40px;}
-.sprite-icon-where-off{background-position:0px -326px;width:40px;height:40px;}
-.sprite-icon-when-on{background-position:0px -366px;width:40px;height:40px;}
-.sprite-icon-when-off{background-position:0px -406px;width:40px;height:40px;}
-.sprite-button-secondary-rightcap{background-position:0px -446px;width:4px;height:40px;}
-.sprite-button-secondary-repeatx{background-position:0px -486px;width:10px;height:40px;}
-.sprite-button-secondary-nipple{background-position:0px -526px;width:10px;height:40px;}
-.sprite-button-secondary-leftcap{background-position:0px -566px;width:4px;height:40px;}
-.sprite-button-primary-rightcap{background-position:0px -606px;width:4px;height:40px;}
-.sprite-button-primary-leftcap{background-position:0px -646px;width:4px;height:40px;}
-.sprite-button-main-repeatx{background-position:0px -686px;width:10px;height:40px;}
-.sprite-icon-refresh{background-position:0px -726px;width:21px;height:25px;}
-.sprite-icon-refresh-white{background-position:0px -751px;width:24px;height:23px;}
-.sprite-icon-edit{background-position:0px -772px;width:21px;height:20px;}
-.sprite-icon-check{background-position:0px -792px;width:19px;height:16px;}
-.sprite-icon-question{background-position:0px -808px;width:16px;height:16px;}
-.sprite-triangle-orange{background-position:0px -824px;width:10px;height:11px;}
-.sprite-triangle-grey{background-position:0px -835px;width:10px;height:11px;}
+.sprite-triangle-grey{background-image:url('sprite.png');background-repeat:no-repeat}
+.sprite-toggle-on{background-position:-2px -2px;width:50px;height:23px;}
+.sprite-toggle-off{background-position:-2px -29px;width:50px;height:23px;}
+.sprite-map-on{background-position:-2px -56px;width:44px;height:40px;}
+.sprite-map-off{background-position:-2px -100px;width:44px;height:40px;}
+.sprite-map:active{background-position:-2px -144px;width:44px;height:40px;}
+.sprite-list-on{background-position:-2px -188px;width:44px;height:40px;}
+.sprite-list-off{background-position:-2px -232px;width:44px;height:40px;}
+.sprite-list:active{background-position:-2px -276px;width:44px;height:40px;}
+.sprite-icon-where-on{background-position:-2px -320px;width:40px;height:40px;}
+.sprite-icon-where-off{background-position:-2px -364px;width:40px;height:40px;}
+.sprite-icon-when-on{background-position:-2px -408px;width:40px;height:40px;}
+.sprite-icon-when-off{background-position:-2px -452px;width:40px;height:40px;}
+.sprite-button-secondary-rightcap{background-position:-2px -496px;width:4px;height:40px;}
+.sprite-button-secondary-repeatx{background-position:-2px -540px;width:10px;height:40px;}
+.sprite-button-secondary-nipple{background-position:-2px -584px;width:10px;height:40px;}
+.sprite-button-secondary-leftcap{background-position:-2px -628px;width:4px;height:40px;}
+.sprite-button-primary-rightcap{background-position:-2px -672px;width:4px;height:40px;}
+.sprite-button-primary-leftcap{background-position:-2px -716px;width:4px;height:40px;}
+.sprite-button-main-repeatx{background-position:-2px -760px;width:10px;height:40px;}
+.sprite-icon-refresh{background-position:-2px -804px;width:21px;height:25px;}
+.sprite-icon-refresh-white{background-position:-2px -833px;width:24px;height:23px;}
+.sprite-icon-edit{background-position:-2px -860px;width:21px;height:20px;}
+.sprite-icon-check{background-position:-2px -884px;width:19px;height:16px;}
+.sprite-icon-question{background-position:-2px -904px;width:16px;height:16px;}
+.sprite-triangle-orange{background-position:-2px -924px;width:10px;height:11px;}
+.sprite-triangle-grey{background-position:-2px -939px;width:10px;height:11px;}
 @media only screen and (-webkit-min-device-pixel-ratio: 2.0), only screen and (min--moz-device-pixel-ratio: 2.0), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2.0) {.sprite-toggle-on,
 .sprite-toggle-off,
 .sprite-map-on,
@@ -75,4 +76,4 @@
 .sprite-icon-check,
 .sprite-icon-question,
 .sprite-triangle-orange,
-.sprite-triangle-grey{background-image:url(sprite@2x.png);-webkit-background-size: 50px 847px;-moz-background-size: 50px 847px;background-size: 50px 847px;}}
+.sprite-triangle-grey{background-image:url('sprite@2x.png');-webkit-background-size: 54px 951px;-moz-background-size: 54px 951px;background-size: 54px 951px;}}
