@@ -147,7 +147,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 */
 .ui-content .item-details { overflow: auto; background-color: #e6e6e6; height: 100%; }
 .ui-content .itemDetails { margin-left: 60px; }
-.ui-content .items .row { margin: 5px; background: white; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; }
+.ui-content .items .row { margin: 5px; background: white; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; box-shadow: 0px 1px 6px -3px; border-radius: 4px; }
 .ui-content .items .topRow {
   position: relative;
   display: -webkit-box;
