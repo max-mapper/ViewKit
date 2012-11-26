@@ -18,7 +18,7 @@ enhancespritecss:
 	@sed -i "" "s/-focus/:focus/g" lib/sprite-dist/sprite.css
 
 browserify:
-	@browserify -r util -r events -r stream -r mustache -r underscore -r masseuse -o lib/browserify/bundle.js
+	@browserify -r util -r events -r stream -r mustache -r underscore -r fastclick -o lib/browserify/bundle.js
 
 package:
 	@rm -fr build
