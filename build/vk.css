@@ -131,7 +131,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 /* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
 /* even if you un-set it in js after it renders */
 /* due to these constraints these values are set by JS instead of here */
-.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; width: 100%; -webkit-overflow-scrolling: touch; overflow-x: auto; }
+.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; left: 0; right: 0; -webkit-overflow-scrolling: touch; overflow-x: auto; }
 
 /* extend scroll area to bottom if the bottomnav is hidden */
 .hidden .items { bottom: 0px !important; }
@@ -144,6 +144,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { margin: 5px; background: white; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; box-shadow: 0px 1px 6px -3px; border-radius: 4px; }
 .ui-content .items .topRow {
+  width: 100%;
   position: relative;
   display: -webkit-box;
   -webkit-box-pack: center;

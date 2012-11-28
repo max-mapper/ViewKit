@@ -2,6 +2,7 @@
 .ui-content .itemDetails { margin-left: 60px; }
 .ui-content .items .row { margin: 5px; background: white; min-height: 49px; border-bottom: 1px solid #cccccc; color: #363636; position: relative; box-shadow: 0px 1px 6px -3px; border-radius: 4px; }
 .ui-content .items .topRow {
+  width: 100%;
   position: relative;
   display: -webkit-box;
   -webkit-box-pack: center;
