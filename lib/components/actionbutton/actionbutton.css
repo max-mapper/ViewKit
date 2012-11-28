@@ -30,5 +30,5 @@
 .left.buttons .actionButton { margin-left: 3px; }
 .right.buttons .actionButton { margin-right: 3px; }
 .right.buttons { margin-right: 2px; display: -moz-box; -moz-box-orient: vertical; display: -webkit-box; display: box; -webkit-box-orient: vertical; box-orient: vertical; }
-.right.buttons { -moz-box-align: end; -webkit-box-align: end; box-align: end; }
+.right.buttons { -moz-box-align: end; -webkit-box-align: end; box-align: end; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; box-orient: horizontal; -moz-box-pack: end; -webkit-box-pack: end; box-pack: end; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
