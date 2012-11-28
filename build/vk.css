@@ -55,7 +55,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
 .vk-container a:active .highlight { background: #fafafa; }
-.vk-container { height: 100%; }.topNav { position: fixed; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
+.vk-container { height: 100%; }.ui-content .navBarContainer { width: 100%; height: 100%; }.topNav { position: absolute; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); background: -moz-linear-gradient(top, #96c7a2, #87b492);  border-top-right-radius: 5px; border-top-left-radius: 5px;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -67,7 +67,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 }
 
 .topNav .left.buttons .actionButton { float: left; }
-
+.topNav .right.buttons .actionButton { display: inline-block; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #515151; 
   -webkit-box-align: center;
@@ -86,12 +86,11 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .nav-button.following { font-size: 13.5px; font-weight: bold; border-bottom-left-radius: 5px; }
 .nav-button.settings { border-bottom-right-radius: 5px;  }
 .whitePlaceholder { height: 54px; width: 100%; background: white;}
-.bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
-.bottomNav .left.buttons a { -webkit-box-flex: 1; }
-.bottomNav .right.buttons a { float: right; }
+.bottomNav .left.buttons { -webkit-box-flex: 2; -moz-box-flex: 2; display: -webkit-box; display: -moz-box; }
+.bottomNav .left.buttons a { -webkit-box-flex: 1; -moz-box-flex: 1; }
 .bottomNav.hidden { height: 0px !important; }
 .nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
-.nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1;
+.nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); background: -moz-linear-gradient(top, #fefefe, #e6e6e6); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1;
   display: -webkit-box;
   -webkit-box-pack: center;
   -webkit-box-align: center;
@@ -102,31 +101,27 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
   box-pack: center;
   box-align: center;
 }
-.nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe));}
+.nav-button.round:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#fefefe)); background: -moz-linear-gradient(top, #e6e6e6, #fefefe); }
 .nav-button.round .label { margin: 0 10px; }
 .nav-button .labelSprite { margin-right: 5px; }
-.nav-button.srsbsns { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe8657), to(#e9794f)); color: white; text-shadow: none; font-family: 'Open Sans Bold'; margin: 0; width: 100%; }
-.nav-button.srsbsns:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9794f), to(#fe8657));}
+.nav-button.srsbsns { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe8657), to(#e9794f)); background: -moz-linear-gradient(top, #fe8657, #e9794f); color: white; text-shadow: none; font-family: 'Open Sans Bold'; margin: 0; width: 100%; }
+.nav-button.srsbsns:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9794f), to(#fe8657)); background: -moz-linear-gradient(top, #e9794f, #fe8657);}
 .nav-button.disabled { background: #727272; color: #4a4a4a;}
-.nav-button.action { padding: 0 10px; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9f2fc), to(#c5dbe4));}
-.nav-button.action:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5dbe4), to(#d9f2fc));}
+.nav-button.action { padding: 0 10px; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9f2fc), to(#c5dbe4)); background: -moz-linear-gradient(top, #d9f2fc, #c5dbe4); }
+.nav-button.action:active { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5dbe4), to(#d9f2fc)); background: -moz-linear-gradient(top, #c5dbe4, #d9f2fc);}
 
 
 .buttons { 
-  overflow: auto;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  box-align: center; 
 }
 .left.buttons { margin-left: 5px; }
 .left.buttons .actionButton { margin-left: 3px; }
-.right.buttons .actionButton { float: right; margin-right: 3px; }
-.right.buttons { margin-right: 2px; }
+.right.buttons .actionButton { margin-right: 3px; }
+.right.buttons { margin-right: 2px; display: -moz-box; -moz-box-orient: vertical; }
+.right.buttons { -moz-box-align: end; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .navButton { display: block; text-align: center; }
 .bottomButton { line-height: 38px; height: 38px; border-radius: 5px; padding: 0px; color: #c4c4c4; font-size: 13.58px; }
@@ -136,7 +131,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 /* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
 /* even if you un-set it in js after it renders */
 /* due to these constraints these values are set by JS instead of here */
-.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; width: 100%; -webkit-overflow-scrolling: touch; overflow-x: scroll; }
+.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; width: 100%; -webkit-overflow-scrolling: touch; overflow-x: auto; }
 
 /* extend scroll area to bottom if the bottomnav is hidden */
 .hidden .items { bottom: 0px !important; }

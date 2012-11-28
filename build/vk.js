@@ -3125,7 +3125,7 @@ NavBar.prototype.makeCrossBrowserCompatible = function() {
   var navBar = $(this.target)
 }
 
-})(vk, "<div class=\"left buttons\"></div>\n<div class=\"right buttons\"></div>\n");
+})(vk, "<div class=\"centerBoth navBarContainer\">\n  <div class=\"left buttons\"></div>\n  <div class=\"right buttons\"></div>\n</div>");
 ;(function(exports){
 /**
  * Expose `Button`

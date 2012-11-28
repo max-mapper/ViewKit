@@ -16,7 +16,6 @@
 .nav-button.following { font-size: 13.5px; font-weight: bold; border-bottom-left-radius: 5px; }
 .nav-button.settings { border-bottom-right-radius: 5px;  }
 .whitePlaceholder { height: 54px; width: 100%; background: white;}
-.bottomNav .left.buttons { -webkit-box-flex: 2; display: -webkit-box; }
-.bottomNav .left.buttons a { -webkit-box-flex: 1; }
-.bottomNav .right.buttons a { float: right; }
+.bottomNav .left.buttons { -webkit-box-flex: 2; -moz-box-flex: 2; display: -webkit-box; display: -moz-box; }
+.bottomNav .left.buttons a { -webkit-box-flex: 1; -moz-box-flex: 1; }
 .bottomNav.hidden { height: 0px !important; }

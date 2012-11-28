@@ -1,4 +1,4 @@
-.topNav { position: fixed; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); border-top-right-radius: 5px; border-top-left-radius: 5px;
+.topNav { position: absolute; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); background: -moz-linear-gradient(top, #96c7a2, #87b492);  border-top-right-radius: 5px; border-top-left-radius: 5px;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -10,4 +10,4 @@
 }
 
 .topNav .left.buttons .actionButton { float: left; }
-
+.topNav .right.buttons .actionButton { display: inline-block; }
