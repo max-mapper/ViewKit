@@ -120,8 +120,8 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .left.buttons { margin-left: 5px; }
 .left.buttons .actionButton { margin-left: 3px; }
 .right.buttons .actionButton { margin-right: 3px; }
-.right.buttons { margin-right: 2px; display: -moz-box; -moz-box-orient: vertical; }
-.right.buttons { -moz-box-align: end; }
+.right.buttons { margin-right: 2px; display: -moz-box; -moz-box-orient: vertical; display: -webkit-box; display: box; -webkit-box-orient: vertical; box-orient: vertical; }
+.right.buttons { -moz-box-align: end; -webkit-box-align: end; box-align: end; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .navButton { display: block; text-align: center; }
 .bottomButton { line-height: 38px; height: 38px; border-radius: 5px; padding: 0px; color: #c4c4c4; font-size: 13.58px; }
