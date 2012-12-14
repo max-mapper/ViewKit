@@ -55,7 +55,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .vk-container input::-webkit-input-placeholder { opacity: .8; }
 .vk-container a { text-decoration: none; outline: 0; line-height: inherit; }
 .vk-container a:active .highlight { background: #fafafa; }
-.vk-container { height: 100%; }.ui-content .navBarContainer { width: 100%; height: 100%; }.topNav { position: absolute; top: 0; right: 0; left: 0; z-index: 666; height: 49px; border-bottom: 1px solid #6d8f75; background-color: #e4e4e4; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#96c7a2), to(#87b492)); background: -moz-linear-gradient(top, #96c7a2, #87b492);  border-top-right-radius: 5px; border-top-left-radius: 5px;
+.vk-container { height: 100%; }.ui-content .navBarContainer { width: 100%; height: 100%; }.topNav { position: absolute; top: 0; right: 0; left: 0; z-index: 666; height: 44px; border-bottom: 1px solid #bcbcbc; background-color: #E1E1E1; border-top-right-radius: 5px; border-top-left-radius: 5px;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -66,10 +66,11 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
   display: box;
 }
 
+.topNav .buttons { height: 32px; }
 .topNav .left.buttons .actionButton { float: left; }
 .topNav .right.buttons .actionButton { display: inline-block; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
-.bottomNav { height: 55px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #515151; 
+.bottomNav { height: 45px; z-index: 666; position: fixed; bottom: 0px; left: 0px; right: 0px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: #E1E1E1; border-top: 1px solid #bcbcbc;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -82,6 +83,8 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .bottomNav .active.bottomButton { color: #111111; border-radius: 3px; background-color: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F;}
 .bottomNav .iconButton { width: 38px; height: 38px; border-radius: 3px; background: #96C7A2; border-left: 1px solid #6F816F; border-right: 1px solid #6F816F; }
 .bottomNav .iconButton:active { background-color: #C7DECC; }
+.right.buttons .actionButton { margin-right: 25px; }
+
 .bottomNav .refreshButton .sprite.spinning { background: url('images/transparent-loader.gif') no-repeat 4px 4px; background-size: initial; }
 .nav-button.following { font-size: 13.5px; font-weight: bold; border-bottom-left-radius: 5px; }
 .nav-button.settings { border-bottom-right-radius: 5px;  }
@@ -89,7 +92,7 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 .bottomNav .left.buttons { -webkit-box-flex: 2; -moz-box-flex: 2; display: -webkit-box; display: -moz-box; }
 .bottomNav .left.buttons a { -webkit-box-flex: 1; -moz-box-flex: 1; }
 .bottomNav.hidden { height: 0px !important; }
-.nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 47px; height: 49px; text-align: center; }
+.nav-button { font-size: 13.5px; background: #e5e5e5; color: #959595; float: left; line-height: 42px; height: 44px; text-align: center; }
 .nav-button.round { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e6e6e6)); background: -moz-linear-gradient(top, #fefefe, #e6e6e6); position: relative; font-size: 13.58px; text-shadow: 0 1px 0 white; color: #363636; line-height: 39px; height: 39px; border-radius: 3px; box-shadow: 0px 0px 1px rgba(0,0,0,1); z-index: 1;
   display: -webkit-box;
   -webkit-box-pack: center;
@@ -119,19 +122,18 @@ html, body { margin: 0; font: 14px/1.6 "Helvetica Neue", Helvetica, arial, sans-
 }
 .left.buttons { margin-left: 5px; }
 .left.buttons .actionButton { margin-left: 3px; }
-.right.buttons .actionButton { margin-right: 3px; }
 .right.buttons { margin-right: 2px; display: -moz-box; -moz-box-orient: vertical; display: -webkit-box; display: box; -webkit-box-orient: vertical; box-orient: vertical; }
 .right.buttons { -moz-box-align: end; -webkit-box-align: end; box-align: end; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; box-orient: horizontal; -moz-box-pack: end; -webkit-box-pack: end; box-pack: end; }
 .nav-button.action .sprite.icon-refresh { margin: 0px 10px; }
 .navButton { display: block; text-align: center; }
-.bottomButton { line-height: 38px; height: 38px; border-radius: 5px; padding: 0px; color: #c4c4c4; font-size: 13.58px; }
+.bottomButton { border-radius: 5px; padding: 0px; color: #8E8E8E; font-size: 10px; text-transform: uppercase; font-weight: bold; }
 .bottomButton:active { color: white; }
 /* browser compat notes: */
-/* for .ui-content .items there needs to be a bottom: 55px; set for all browsers except android 2.x */
-/* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
+/* for .ui-content .items there needs to be a bottom: 45px; set for all browsers except android 2.x */
+/* for android 2.x you need padding-bottom: 45px; if you set bottom: it breaks rendering */
 /* even if you un-set it in js after it renders */
 /* due to these constraints these values are set by JS instead of here */
-.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; left: 0; right: 0; -webkit-overflow-scrolling: touch; overflow-x: auto; }
+.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 45px; bottom: 45px; left: 0; right: 0; -webkit-overflow-scrolling: touch; overflow-x: auto; }
 
 /* extend scroll area to bottom if the bottomnav is hidden */
 .hidden .items { bottom: 0px !important; }

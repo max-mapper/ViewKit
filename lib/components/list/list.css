@@ -1,9 +1,9 @@
 /* browser compat notes: */
-/* for .ui-content .items there needs to be a bottom: 55px; set for all browsers except android 2.x */
-/* for android 2.x you need padding-bottom: 55px; if you set bottom: it breaks rendering */
+/* for .ui-content .items there needs to be a bottom: 45px; set for all browsers except android 2.x */
+/* for android 2.x you need padding-bottom: 45px; if you set bottom: it breaks rendering */
 /* even if you un-set it in js after it renders */
 /* due to these constraints these values are set by JS instead of here */
-.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 50px; bottom: 55px; left: 0; right: 0; -webkit-overflow-scrolling: touch; overflow-x: auto; }
+.ui-content .items { z-index:2 !important; background: #e1e1e1; font-family: Open Sans; border-top: 1px solid #cccccc; position: absolute; top: 45px; bottom: 45px; left: 0; right: 0; -webkit-overflow-scrolling: touch; overflow-x: auto; }
 
 /* extend scroll area to bottom if the bottomnav is hidden */
 .hidden .items { bottom: 0px !important; }
